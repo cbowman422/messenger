@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Project 4 - Live Chat Socket.IO | Christopher Bowman
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Scope: 
 
-## Available Scripts
+The scope is to build a live chatroom using Socket.io, Express, MongoDB, Mongoose, JS, React, and JWT Bearer Auth. I am determined to trying to implement this in the time period.
 
-In the project directory, you can run:
+## User Stories: 
 
-### `npm start`
+- The user will be able to register/ sign in.
+- They will be navigated to a page where there will be a list of users active on the application.
+- The user can click on another active user, and a chat between the two users will be possible in the chat window.
+- A message will be created by having selected on another user and typing into the chat box and sending the message.
+- The message will then be updated via sockets and displayed on both users pages in real time.
+- There may be an option for a chat room that everyone can post in.
+- The user will be able to log out.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Wireframes:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![wire frame login](https://imgur.com/d1X8i50.jpg)
 
-### `npm test`
+![wire frame](https://imgur.com/SRlwaLU.jpg)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Data Models:
 
-### `npm run build`
+![ERD](https://imgur.com/glg98eH.jpg)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Milestones:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Read Sockets.IO Documentation and solve tutorial in local sandboxes (Complete)
+2. Set up React client/ Mongo server w/ Mongoose, and JWT Auth. (Complete)
+3. Incorporate Sockets.IO into React.js (Complete)
+4. Incorporate Sockets.IO into backend Node server (Complete)
+5. Incorporate MongoDB Change Streams into backend. (In Progress)
+6. Create Namespaces for Private Chatrooms. (Incomplete)
+7.  CSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Feasibility Study (optional):
 
-### `npm run eject`
+A link to test containing React, Mongo, Express, Mongoose, JWT Auth, and Sockets.IO. Will incorporate Mongo Change Streams after that local sandbox is completed.
+These Repo display everything i learned in my local sandboxes.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+https://github.com/cbowman422/mern_socket_be
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+https://github.com/cbowman422/mern_socket_fe
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Resources:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. https://socket.io/get-started/chat
+9. https://socket.io/docs/v4/
+10. https://dev.to/novu/building-a-chat-app-with-socketio-and-react-2edj#:~:text=You'll%20also%20learn%20how,folders%20named%20client%20and%20server.&text=Navigate%20into%20the%20client%20folder,and%20create%20a%20new%20React.
+11. https://www.mongodb.com/developer/products/mongodb/mongo-socket-chat-example/
+12. https://www.mongodb.com/docs/manual/changeStreams/
+13. https://dev.to/rmadisetti3/using-ajax-in-conjunction-with-mongodb-12n
+14. https://docs.nestjs.com/
 
-## Learn More
+### comments
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+Express allows you to define routes of your application based on HTTP methods and URLs. http event listener for connecting to port. on the sever instance we bind to socket 'connection' event and provide socket as argument 
+when a user comes onto the server they get connected to a socket and given a socket id and information.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Both Client and sever communicate through the Node.js server with sockets. so messages need to be sent to node server on both sides.
+```
