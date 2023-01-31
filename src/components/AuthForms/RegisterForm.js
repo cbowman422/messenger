@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState} from 'react'
-import  {useNavigate} from 'react-router-dom'
+import  {useNavigate, Link} from 'react-router-dom'
 
 const RegisterForm = ({signup, createProfile}) => {
 
@@ -72,6 +72,9 @@ const RegisterForm = ({signup, createProfile}) => {
         <br />
         <input type="submit" value="Sign Up" />
       </form>
+      <Link to={'/login'} >
+      <h2> sign in instead</h2>
+      </Link>
     </>
   );
 };

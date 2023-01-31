@@ -11,10 +11,10 @@ const Main = ({signup, login, user, socket, createProfile}) => {
   return (
     <div>
       <Routes>
-      <Route path="/" element={<Rooms />}/>
+      <Route path="/rooms" element={<Rooms />}/>
         <Route path="/room/:id" element={<Chat socket={socket} user={user} />}/>
         <Route path="/chat/:id" element={<Show/>}/>
-        <Route path="/register/" element={<RegisterForm signup={signup} createProfile={createProfile} />}/>
+        <Route path="/" element={<RegisterForm signup={signup} createProfile={createProfile} />}/>
         <Route path="/login/" element={<LoginForm login={login}/>}/>
       </Routes>
     </div>
