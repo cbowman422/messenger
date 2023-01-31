@@ -127,3 +127,6 @@ return (
 }
 
 export default App;
+
+
+// capstone-chat.netlify.app/:1 Access to XMLHttpRequest at 'https://capstone-chat.herokuapp.com/socket.io/?EIO=4&transport=polling&t=OO9Kf4t' from origin 'https://capstone-chat.netlify.app' has been blocked by CORS policy: The 'Access-Control-Allow-Origin' header has a value 'https://capstone-chat.netlify.app/' that is not equal to the supplied origin.
