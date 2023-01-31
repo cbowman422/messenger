@@ -7,12 +7,12 @@ import Show from '../components/Chat/Show'
 import Rooms from '../components/Rooms'
 
 // passing signup, login, and user through app
-const Main = ({signup, login, user, socket, createProfile}) => {
+const Main = ({signup, login, currentUser, socket, createProfile}) => {
   return (
     <div>
       <Routes>
       <Route path="/rooms" element={<Rooms />}/>
-        <Route path="/room/:id" element={<Chat socket={socket} user={user} />}/>
+        <Route path="/room/:id" element={<Chat socket={socket} currentUser={currentUser} />}/>
         <Route path="/chat/:id" element={<Show/>}/>
         <Route path="/" element={<RegisterForm signup={signup} createProfile={createProfile} />}/>
         <Route path="/login/" element={<LoginForm login={login}/>}/>

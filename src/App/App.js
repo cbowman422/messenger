@@ -120,7 +120,7 @@ const signOutHandler = () =>
 
 return (
   <div>
-    < Main login={loginUser} user={currentUser} signup={registerUser} socket={socket} createProfile={registerProfile} />
+    < Main login={loginUser} currentUser={currentUser} signup={registerUser} socket={socket} createProfile={registerProfile} />
     <button onClick={signOutHandler}>signout</button>
   </div>
 );

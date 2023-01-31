@@ -33,9 +33,9 @@ const RegisterForm = ({signup, createProfile}) => {
     const createdUserProfile = await createProfile(profileForm)
 
     if (createdUserToken && createdUserProfile) {
-      navigate(`/`)
+      navigate(`/rooms`)
     } else {
-      navigate("/register/")
+      navigate("/")
     }
 
     // set state as new username and password on submit

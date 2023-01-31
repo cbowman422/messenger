@@ -23,7 +23,7 @@ const LoginForm = ({login}) => {
     const createdUserToken = await login(input)
 
     if (createdUserToken) {
-      navigate("/")
+      navigate("/rooms")
     } else {
       navigate("/login/")
     }

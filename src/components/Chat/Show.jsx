@@ -87,7 +87,7 @@ const Show= (props)=>
       const response= await fetch(URL, options);
       const deletedChat= await response.json();
       // console.log(deletedChat);
-      navigate("/");
+      navigate("/rooms");
     }catch(err)
     {
       console.log(err)

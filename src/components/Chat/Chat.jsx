@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { getUserToken } from '../../utils/authToken';
 
 
-const Chat= ({socket, user})=> 
+const Chat= ({socket, currentUser})=> 
 {
 
   const { id } = useParams()
@@ -120,7 +120,7 @@ const Chat= ({socket, user})=>
       <>
 
   {chat?.map((chatMap) =>
-  { if ((chatMap.chatRoomUserTwo === id || chatMap.chatRoomUserTwo ===  user.username) && (chatMap.owner.username === id || chatMap.owner.username === user.username)){
+  { if ((chatMap.chatRoomUserTwo === id || chatMap.chatRoomUserTwo ===  currentUser.username) && (chatMap.owner.username === id || chatMap.owner.username === currentUser.username)){
 
     return(
       <div key={chatMap._id}>
