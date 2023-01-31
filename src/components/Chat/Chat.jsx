@@ -22,7 +22,7 @@ const Chat= ({socket, user})=>
   const [socketState, setSocketState] = useState('')
 
   // API BASE URL to mongodb backend 
-  const BASE_URL= "http://localhost:4000/chat";
+  const BASE_URL= "https://capstone-chat.herokuapp.com/chat";
 
   // useEffect to store Chat JSON as setChat state
   const getChat= async()=>
@@ -102,52 +102,6 @@ const Chat= ({socket, user})=>
     }
   }
 
-// TODO old loaded function with out socket
-  // // Loaded chat function
-  // const loaded = () =>
-  // {
-
-  //   // JSX for creating a new Chat when Chat is loaded
-  //   return (
-  //     <>
-  //     <section>
-  //       <h2>Create a new Chat</h2>
-  //       <form onSubmit={handleSubmit}>
-  //         <label>
-  //           chat!
-  //           <input 
-  //             type='text' 
-  //             name='textChat' 
-  //             placeholder="text"
-  //             value={newForm.textChat}
-  //             onChange={handleChange}
-  //           />
-  //         </label>
-  //         <input type="submit" value="Create Chat" />
-  //       </form>
-  //     </section>
-  //     <section className='chat-list'>
-  //       {chat?.map((chat) =>
-  //         {
-  //           return(
-  //             <div key={chat._id} className='chat-card'>
-  //               <Link to={`/chat/${chat._id}`}>
-
-  //               <h3>{chat.textChat}</h3>
-
-  //               </Link>
-                
-  //              </div>
-  //           );
-  //         })
-  //       }
-  //     </section>
-  //     </>
-  //   )
-  // };
-
-  // / JSX for creating a new chat when chat is loading
-  
   
   const loading = () => (
     <section className="loading">

@@ -18,7 +18,7 @@ const Show= (props)=>
   const navigate = useNavigate();
 
   // sets chat show route URL as variable and dependent ID from useParams
-  const URL = `http://localhost:4000/chat/${id}`;
+  const URL = `https://capstone-chat.herokuapp.com/chat/${id}`;
 
   // event handler for when UPDATE name and title are changed
   const handleChange= (e)=>

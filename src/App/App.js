@@ -30,7 +30,7 @@ function App() {
         },
       }
       const newProfile = await fetch(
-        "http://localhost:4000/profile/",
+        "https://capstone-chat.herokuapp.com/profile",
         configs
       )
 
@@ -57,7 +57,7 @@ function App() {
         },
       }
       const newUser = await fetch(
-        "http://localhost:4000/auth/register",
+        "https://capstone-chat.herokuapp.com/auth/register",
         configs
       )
 
@@ -91,7 +91,7 @@ function App() {
         },
       }
       const response = await fetch(
-        "http://localhost:4000/auth/login",
+        "https://capstone-chat.herokuapp.com/auth/login",
         configs
       )
       const user = await response.json()

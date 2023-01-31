@@ -8,7 +8,7 @@ const Rooms = () => {
   const [room, setRoom] = useState()
 
     // API BASE URL to mongodb backend 
-    const BASE_URL= "http://localhost:4000/profile";
+    const BASE_URL= "https://capstone-chat.herokuapp.com/profile";
 
     // useEffect to store Chat JSON as setChat state
     const getProfile= async()=>
