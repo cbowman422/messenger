@@ -46,12 +46,11 @@ https://github.com/cbowman422/mern_socket_fe
 ## Resources:
 
 1. https://socket.io/get-started/chat
-9. https://socket.io/docs/v4/
-10. https://dev.to/novu/building-a-chat-app-with-socketio-and-react-2edj#:~:text=You'll%20also%20learn%20how,folders%20named%20client%20and%20server.&text=Navigate%20into%20the%20client%20folder,and%20create%20a%20new%20React.
-11. https://www.mongodb.com/developer/products/mongodb/mongo-socket-chat-example/
-12. https://www.mongodb.com/docs/manual/changeStreams/
-13. https://dev.to/rmadisetti3/using-ajax-in-conjunction-with-mongodb-12n
-14. https://docs.nestjs.com/
+2. https://socket.io/docs/v4/
+3. https://dev.to/novu/building-a-chat-app-with-socketio-and-react-2edj#:~:text=You'll%20also%20learn%20how,folders%20named%20client%20and%20server.&text=Navigate%20into%20the%20client%20folder,and%20create%20a%20new%20React.
+4. https://www.mongodb.com/developer/products/mongodb/mongo-socket-chat-example/
+5. https://www.mongodb.com/docs/manual/changeStreams/
+
 
 ### comments
 
