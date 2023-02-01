@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState} from 'react'
 import  {useNavigate, Link} from 'react-router-dom'
-import '../../CSS/AuthForms.css'
+import '../../css/AuthForms.css'
 
 const RegisterForm = ({signup, createProfile}) => {
 
@@ -57,7 +57,7 @@ const RegisterForm = ({signup, createProfile}) => {
           name="username"
           value={input.username}
           onChange={handleChange}
-          maxlength="17"
+          maxLength="17"
         />
         <br />
         <br />

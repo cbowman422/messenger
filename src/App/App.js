@@ -1,8 +1,9 @@
-import '../CSS/App.css';
+import '../css/App.css';
 import React from 'react'
 import {useState} from 'react'
 import {getUserToken, setUserToken, clearUserToken} from '../utils/authToken'
 import Main from '../pages/Main';
+import Header from '../components/Header/Header';
 
 // Connecting Socket.io server to React App
 import socketIO from 'socket.io-client';
@@ -101,7 +102,9 @@ function App() {
       setUserToken(user.token)
   // put the returned user object in state for CurrentUser
       setCurrentUser(user.user)
-      console.log(user.user)
+      
+      setIsAuthenticated(user.isLoggedIn)
+      //console.log(user.user)
       return user
     } catch (err) {
       clearUserToken()
@@ -109,25 +112,25 @@ function App() {
     }
   }
 
-  
-const signOutHandler = () => 
-{
-  localStorage.clear();
-  localStorage.removeItem('Token');
-  
-  // window.location.reload()
-}
 
+  const signOutHandler = () => 
+  {
+    console.log("hitting")
+    if(isAuthenticated){
+      setIsAuthenticated(current => !current)
+      setCurrentUser({})
+      
+    }
+  }
 
 return (
   <div>
+    < Header loggedIn={isAuthenticated} signOut={signOutHandler} />
     < Main login={loginUser} currentUser={currentUser} signup={registerUser} socket={socket} createProfile={registerProfile} />
-    <button onClick={signOutHandler}>signout</button>
+    
   </div>
 );
 }
 
 export default App;
 
-
-// capstone-chat.netlify.app/:1 Access to XMLHttpRequest at 'https://capstone-chat.herokuapp.com/socket.io/?EIO=4&transport=polling&t=OO9Kf4t' from origin 'https://capstone-chat.netlify.app' has been blocked by CORS policy: The 'Access-Control-Allow-Origin' header has a value 'https://capstone-chat.netlify.app/' that is not equal to the supplied origin.
