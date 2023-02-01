@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react"
-import { Navigate, useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { getUserToken } from '../../utils/authToken'
 
 
@@ -86,7 +86,7 @@ const Show= (props)=>
       }
       const response= await fetch(URL, options);
       const deletedChat= await response.json();
-      // console.log(deletedChat);
+      console.log(deletedChat);
       navigate("/rooms");
     }catch(err)
     {
@@ -141,6 +141,7 @@ const Show= (props)=>
           <span>
             <img
               className="spinner"
+              alt="wrong"
               src="https://freesvg.org/img/1544764567.png"
             />{" "}
           </span>
