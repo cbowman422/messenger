@@ -169,6 +169,13 @@ const Chat= ({socket, currentUser})=>
       )
 
     }
+    else {
+      return (
+        <div>
+          <h2>Connected with {id}</h2>
+        </div>
+      )
+    }
   }
 
 
@@ -180,10 +187,8 @@ const Chat= ({socket, currentUser})=>
           <h1> &#60; </h1>
         </Link>
         <section className="awayMessage">{currentUser ? awayMessageNote() : <> </>}</section>
-        <h2>Connected with {id}</h2>
         <form onSubmit={handleSubmit}>
           <label>
-
             <input 
               type='text' 
               name='textChat' 
