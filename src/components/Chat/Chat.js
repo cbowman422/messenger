@@ -17,10 +17,6 @@ const Chat= ({socket, currentUser})=>
     chatRoomUserTwo: `${id}`,
   });
 
-
-
-  // const [socketState, setSocketState] = useState('')
-
   // API BASE URL to mongodb backend 
   const BASE_URL= "https://capstone-chat.herokuapp.com/chat";
 
@@ -44,8 +40,6 @@ const Chat= ({socket, currentUser})=>
     setNewForm({ ...newForm, [e.target.name]: e.target.value });
   };
 
-
-
   // event handler to POST a chat with newForm State input
   const handleSubmit= async(e)=>
   {
@@ -56,8 +50,7 @@ const Chat= ({socket, currentUser})=>
     const currentState = {...newForm}
 
  
-    // TODO this is for sockets -------------------------
-  
+    //  this is for sockets -------------------------
     if(id === 'LivePublicChatRoom')
     { 
         currentState ? socket.emit('message', {
@@ -167,6 +160,17 @@ const Chat= ({socket, currentUser})=>
   }, [socket, messages, messagesLibrary]);
 
 
+  const awayMessageNote = () => {
+    if (id === currentUser.username){
+      return (
+        <div>
+          <h1> Add an Away Message here that will appear to each user in your chat rooms! </h1>
+        </div>
+      )
+
+    }
+  }
+
 
   // conditional return to return loading and loaded JSX depending on 
   return (
@@ -175,6 +179,7 @@ const Chat= ({socket, currentUser})=>
         <Link to={`/rooms`}>
           <h1> &#60; </h1>
         </Link>
+        <section className="awayMessage">{currentUser ? awayMessageNote() : <> </>}</section>
         <h2>Connected with {id}</h2>
         <form onSubmit={handleSubmit}>
           <label>
