@@ -39,7 +39,7 @@ const LoginForm = ({login}) => {
 
 // Login Form JSX and export
   return (
-    <>
+    <div className="authFormsContainer">
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Name: </label>
@@ -62,7 +62,7 @@ const LoginForm = ({login}) => {
         <br />
         <input type="submit" value="login" />
       </form>
-    </>
+    </div>
   );
 };
 

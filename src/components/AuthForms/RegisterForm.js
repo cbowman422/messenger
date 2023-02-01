@@ -1,6 +1,7 @@
 import React from 'react'
 import {useState} from 'react'
 import  {useNavigate, Link} from 'react-router-dom'
+import '../../CSS/AuthForms.css'
 
 const RegisterForm = ({signup, createProfile}) => {
 
@@ -47,7 +48,7 @@ const RegisterForm = ({signup, createProfile}) => {
 
   // Register Form JSX and export
   return (
-    <div className="registerContainer">
+    <div className="authFormsContainer">
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Name: </label>
