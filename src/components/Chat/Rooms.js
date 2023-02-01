@@ -128,16 +128,18 @@ const Rooms = ({currentUser}) => {
 
   return (
       <>
-      <h2> Rooms </h2>
+      <h2> Public Chat Rooms : </h2>
       <Link to={'/room/LivePublicChatRoom'}>
-      <h3>Live Public Chat Room!</h3>
+      <p>Live Public Chat Room!</p>
       </Link>
+      <h2> Private Chat Rooms : </h2>
       <div className="roomsUsersContainer">
+
   {room?.map((roomMap) =>
   { if (roomMap.usernameProfile !== currentUser.username){
 
     return(
-      <div key={roomMap._id}>
+      <div key={roomMap._id} >
         <Link to={`/room/${roomMap.usernameProfile}`}>
         <p>{roomMap.usernameProfile}</p>
         </Link>
