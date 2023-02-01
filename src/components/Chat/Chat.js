@@ -60,6 +60,10 @@ const Chat= ({socket, currentUser})=>
           id: `${socket.id}${Math.random()}`,
           socketID: socket.id,
         }) : console.log("passing socket isnt working");
+        setNewForm({
+          textChat: "",
+          chatRoomUserTwo: `${id}`,
+      }) 
     } else {
 
 
