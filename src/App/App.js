@@ -102,8 +102,10 @@ function App() {
       setUserToken(user.token)
   // put the returned user object in state for CurrentUser
       setCurrentUser(user.user)
-      
+
       setIsAuthenticated(user.isLoggedIn)
+
+      window.localStorage.setItem('name', user.user.username);
       //console.log(user.user)
       return user
     } catch (err) {
