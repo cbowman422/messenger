@@ -164,7 +164,21 @@ const Chat= ({socket, currentUser})=>
     if (id === currentUser.username){
       return (
         <div>
-          <h1> Add an Away Message here that will appear to each user in your chat rooms! </h1>
+          <h1> Add an Away Message here that will appear to each user in your Private Chats! </h1>
+          <form onSubmit={handleSubmit}>
+          <label>
+          <textarea 
+            type='text' 
+            name='textChat' 
+            rows = "5" 
+            cols = "60"
+            placeholder="text"
+            value={newForm.textChat}
+            onChange={handleChange}
+          />
+          </label>
+          <input type="submit" value="Set Away Message" />
+        </form>
         </div>
       )
 
@@ -173,6 +187,20 @@ const Chat= ({socket, currentUser})=>
       return (
         <div>
           <h2>Connected with {id}</h2>
+          <form onSubmit={handleSubmit}>
+          <label>
+            <input 
+              type='text' 
+              name='textChat' 
+              rows = "5" 
+              cols = "60"
+              placeholder="text"
+              value={newForm.textChat}
+              onChange={handleChange}
+            />
+          </label>
+          <input type="submit" value="Send Message" />
+        </form>
         </div>
       )
     }
@@ -187,18 +215,6 @@ const Chat= ({socket, currentUser})=>
           <h1> &#60; </h1>
         </Link>
         <section className="awayMessage">{currentUser ? awayMessageNote() : <> </>}</section>
-        <form onSubmit={handleSubmit}>
-          <label>
-            <input 
-              type='text' 
-              name='textChat' 
-              placeholder="text"
-              value={newForm.textChat}
-              onChange={handleChange}
-            />
-          </label>
-          <input type="submit" value="Send Message" />
-        </form>
     </section>
       <section className="chat-list">{chat && chat.length ? loaded() : loading()}</section>
     </div>

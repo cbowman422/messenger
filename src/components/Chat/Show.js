@@ -44,12 +44,9 @@ const Show= (props)=>
   // Update Chat function with Authorization header - UPDATE
   const updateChat= async(e)=>
   {
-
    // prevent default (event object method)
     e.preventDefault()
     
-
-
     try
     { 
       const options = {
@@ -65,6 +62,7 @@ const Show= (props)=>
       console.log(updatedChat)
       setChat(updatedChat);
       setEditForm(updatedChat);
+      navigate(`/room/${chat.chatRoomUserTwo}`);
     }catch(err)
     { 
       console.log(err)
@@ -86,8 +84,8 @@ const Show= (props)=>
       }
       const response= await fetch(URL, options);
       const deletedChat= await response.json();
-      console.log(deletedChat);
-      navigate("/rooms");
+    
+      navigate(`/room/${deletedChat.chatRoomUserTwo}`);
     }catch(err)
     {
       console.log(err)
@@ -117,9 +115,11 @@ const Show= (props)=>
       <section>
         <h2>Edit this Chat</h2>
         <form onSubmit={updateChat}>
-          <input
+          <textarea
               type="text"
               value={editForm.textChat}
+              rows = "5" 
+              cols = "60"
               name="textChat"
               placeholder="textChat"
               onChange={handleChange}
