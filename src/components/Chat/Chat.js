@@ -1,8 +1,8 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import { Link, useParams } from "react-router-dom";
-
 import { getUserToken } from '../../utils/authToken';
+import '../../css/Chat.css'
 
 
 const Chat= ({socket, currentUser})=> 
@@ -121,16 +121,14 @@ const Chat= ({socket, currentUser})=>
         <>
         
         {messages?.map((messagesMap, messageMapIdx) =>
-            { if(messagesMap.chatRoomUserTwo === 'LivePublicChatRoom'){
-            }
-              return(
-                <div key={messageMapIdx} className='chat-card'>
-   
-                  <p>{messagesMap.username}: {messagesMap.text}</p>
-            
-                 </div>
-              );
-            })
+          { if(messagesMap.chatRoomUserTwo === 'LivePublicChatRoom'){
+          }
+            return(
+              <div key={messageMapIdx} className='chat-card'>
+                <p>{messagesMap.username}: {messagesMap.text}</p>
+                </div>
+            );
+          })
           }
 
         </>
@@ -141,19 +139,22 @@ const Chat= ({socket, currentUser})=>
 
       // JSX for creating a new Chat when Chat is loaded
       return (
-        <>
+        <div className="scrollWindow">
         {chat?.map((chatMap) =>{ if ((chatMap.chatRoomUserTwo === id || chatMap.chatRoomUserTwo ===  currentUser.username) && (chatMap.owner.username === id || chatMap.owner.username === currentUser.username)){
 
           return(
             <div key={chatMap._id}>
-              <Link to={`/chat/${chatMap._id}`}>
-              <p>{chatMap.owner.username}: {chatMap.textChat}</p>
-              </Link>
+            
+
+                <Link to={`/chat/${chatMap._id}`}>
+                <p>{chatMap.owner.username}: {chatMap.textChat}</p>
+                </Link>
+              
             </div>
           )
         }
         })} 
-        </>
+        </div>
       )
 
     }
@@ -162,10 +163,9 @@ const Chat= ({socket, currentUser})=>
   
 
   useEffect(() => {
-    getChat()
+    getChat();
     socket.on('messageResponse', (data) => setMessagesLibrary([...messagesLibrary, data]));
     socket.on('messageResponseSocket', (data) => setMessages([...messages, data]))
-    console.log(messages)
   }, [socket, messages, messagesLibrary]);
 
 
@@ -198,3 +198,9 @@ const Chat= ({socket, currentUser})=>
 }
 
 export default Chat
+
+
+
+
+
+

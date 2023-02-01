@@ -1,0 +1,7 @@
+.scrollWindow{
+  width:75%;
+  height:50%;
+  line-height:10px;
+  overflow:scroll;
+  padding:30px;
+}

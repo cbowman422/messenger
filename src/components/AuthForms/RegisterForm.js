@@ -74,7 +74,7 @@ const RegisterForm = ({signup, createProfile}) => {
         <input type="submit" value="Sign Up" />
       </form>
       <Link to={'/login'} >
-      <h2> sign in instead</h2>
+      <h2> Already Registered, Sign in Instead ? </h2>
       </Link>
     </div>
   );

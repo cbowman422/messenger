@@ -4,6 +4,7 @@ import {useState} from 'react'
 import {getUserToken, setUserToken, clearUserToken} from '../utils/authToken'
 import Main from '../pages/Main';
 import Header from '../components/Header/Header';
+import '../css/App.css'
 
 // Connecting Socket.io server to React App
 import socketIO from 'socket.io-client';
