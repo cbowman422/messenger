@@ -18,7 +18,9 @@ const Header = ({signOut, currentUser}) => {
       <Link to={'/login'}>
        <button onClick={clearLocalStorage}>signout</button> 
       </Link>
+      <Link to={`/room/${currentUser.username}`}>
       <p className="userStatus">{currentUser.username}</p>
+      </Link>
     </div>
   )
 }

@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 import { Link } from "react-router-dom";
 import '../../css/Rooms.css'
 
-const Rooms = () => {
+const Rooms = ({currentUser}) => {
 
    
   const [room, setRoom] = useState()
@@ -134,7 +134,8 @@ const Rooms = () => {
       </Link>
       <div className="roomsUsersContainer">
   {room?.map((roomMap) =>
-  {
+  { if (roomMap.usernameProfile !== currentUser.username){
+
     return(
       <div key={roomMap._id}>
         <Link to={`/room/${roomMap.usernameProfile}`}>
@@ -142,6 +143,7 @@ const Rooms = () => {
         </Link>
       </div>
     )
+  }
   }
   )
   } 

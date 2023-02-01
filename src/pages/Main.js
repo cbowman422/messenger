@@ -11,7 +11,7 @@ const Main = ({signup, login, currentUser, socket, createProfile}) => {
   return (
     <div>
       <Routes>
-      <Route path="/rooms" element={<Rooms />}/>
+      <Route path="/rooms" element={<Rooms currentUser={currentUser} />}/>
         <Route path="/room/:id" element={<Chat socket={socket} currentUser={currentUser} />}/>
         <Route path="/chat/:id" element={<Show/>}/>
         <Route path="/" element={<RegisterForm signup={signup} createProfile={createProfile} />}/>
