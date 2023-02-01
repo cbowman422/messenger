@@ -48,6 +48,7 @@ const LoginForm = ({login}) => {
           name="username"
           value={input.username}
           onChange={handleChange}
+          maxlength="17"
         />
         <br />
         <br />

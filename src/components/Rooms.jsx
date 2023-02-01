@@ -18,7 +18,7 @@ const Rooms = () => {
         const res= await fetch(BASE_URL)
         const allProfile= await res.json()
 
-        console.log(allProfile)
+        // console.log(allProfile)
         let oderedRoomListNumber = []
         let len = allProfile.length
         for (let i=0; i < len; i++) {
@@ -101,7 +101,7 @@ const Rooms = () => {
             oderedRoomListNumber.push(26)
           }
           }
-        console.log(oderedRoomListNumber)
+        // console.log(oderedRoomListNumber)
         for (let j=0; j < len; j++) {
           for (let k=0; k < len; k++) {
             if (oderedRoomListNumber[k] > oderedRoomListNumber[k + 1]) {
@@ -114,7 +114,7 @@ const Rooms = () => {
           }
           }
         }
-        console.log(oderedRoomListNumber)
+        // console.log(oderedRoomListNumber)
         setRoom(allProfile)
       }catch(err)
       {
@@ -128,6 +128,9 @@ const Rooms = () => {
   return (
       <>
       <h2> Rooms </h2>
+      <Link to={'/room/LivePublicChatRoom'}>
+      <h3>Live Public Chat Room!</h3>
+      </Link>
   {room?.map((roomMap) =>
   {
     return(
