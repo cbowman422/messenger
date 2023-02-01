@@ -1,4 +1,4 @@
-.authFormsContainer{
+.loginContainer{
   border: solid red;
   display: flex;
   flex-direction: column;

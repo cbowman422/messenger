@@ -39,7 +39,7 @@ const LoginForm = ({login}) => {
 
 // Login Form JSX and export
   return (
-    <div className="authFormsContainer">
+    <div className="loginContainer">
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Name: </label>
