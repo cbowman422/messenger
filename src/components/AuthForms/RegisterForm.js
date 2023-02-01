@@ -10,8 +10,6 @@ const RegisterForm = ({signup, createProfile}) => {
   // defining the state of the input and setting it to initial state username/pw
   const [input, setInput] = useState(initialState)
 
-  console.log(input.username)
-
   const [profileForm] = useState({
     usernameProfile: `${input.username}`,
     bioProfile: "",
@@ -49,7 +47,7 @@ const RegisterForm = ({signup, createProfile}) => {
 
   // Register Form JSX and export
   return (
-    <>
+    <div className="registerContainer">
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Name: </label>
@@ -75,7 +73,7 @@ const RegisterForm = ({signup, createProfile}) => {
       <Link to={'/login'} >
       <h2> sign in instead</h2>
       </Link>
-    </>
+    </div>
   );
 };
 
