@@ -140,12 +140,10 @@ const Chat= ({socket, currentUser})=>
       // JSX for creating a new Chat when Chat is loaded
       return (
         <div className="scrollWindow">
-        {chat?.map((chatMap) =>{ if ((chatMap.chatRoomUserTwo === id || chatMap.chatRoomUserTwo ===  currentUser.username) && (chatMap.owner.username === id || chatMap.owner.username === currentUser.username)){
+        {chat?.map((chatMap) => { if ((chatMap.chatRoomUserTwo === id || chatMap.chatRoomUserTwo ===  currentUser.username) && (chatMap.owner.username === id || chatMap.owner.username === currentUser.username)){
 
-          return(
+          return( 
             <div key={chatMap._id}>
-            
-
                 <Link to={`/chat/${chatMap._id}`}>
                 <p>{chatMap.owner.username}: {chatMap.textChat}</p>
                 </Link>

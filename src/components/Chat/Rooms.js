@@ -1,6 +1,7 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import { Link } from "react-router-dom";
+import '../../css/Rooms.css'
 
 const Rooms = () => {
 
@@ -131,6 +132,7 @@ const Rooms = () => {
       <Link to={'/room/LivePublicChatRoom'}>
       <h3>Live Public Chat Room!</h3>
       </Link>
+      <div className="roomsUsersContainer">
   {room?.map((roomMap) =>
   {
     return(
@@ -143,6 +145,7 @@ const Rooms = () => {
   }
   )
   } 
+     </div>
       </>
     )
 

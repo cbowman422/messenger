@@ -129,7 +129,7 @@ function App() {
 
 return (
   <div>
-    < Header loggedIn={isAuthenticated} signOut={signOutHandler} />
+    < Header loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} />
     < Main login={loginUser} currentUser={currentUser} signup={registerUser} socket={socket} createProfile={registerProfile} />
     
   </div>
