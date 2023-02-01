@@ -11,6 +11,9 @@ const Header = ({signOut}) => {
 
   return (
     <div>
+      <Link to={'/login'}>
+       <button>sign in</button> 
+      </Link>
       <Link to={'/rooms'}>
        <button onClick={clearLocalStorage}>signout</button> 
       </Link>
