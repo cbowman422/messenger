@@ -173,12 +173,14 @@ const Chat= ({socket, currentUser})=>
   // conditional return to return loading and loaded JSX depending on 
   return (
     <div>
- <section className="loading">
         <section>
-        <h2>Create a new Chat</h2>
+        <Link to={`/rooms`}>
+          <h1> &#60; </h1>
+        </Link>
+        <h2>Connected with {id}</h2>
         <form onSubmit={handleSubmit}>
           <label>
-            chat!
+
             <input 
               type='text' 
               name='textChat' 
@@ -187,9 +189,8 @@ const Chat= ({socket, currentUser})=>
               onChange={handleChange}
             />
           </label>
-          <input type="submit" value="Create Chat" />
+          <input type="submit" value="Send Message" />
         </form>
-      </section>
     </section>
       <section className="chat-list">{chat && chat.length ? loaded() : loading()}</section>
     </div>

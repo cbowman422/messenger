@@ -109,6 +109,7 @@ function App() {
     }
   }
 
+  
 const signOutHandler = () => 
 {
   localStorage.clear();

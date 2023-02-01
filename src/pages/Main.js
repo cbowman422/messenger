@@ -4,7 +4,7 @@ import LoginForm from '../components/AuthForms/LoginForm'
 import RegisterForm from '../components/AuthForms/RegisterForm'
 import Chat from '../components/Chat/Chat'
 import Show from '../components/Chat/Show'
-import Rooms from '../components/Rooms'
+import Rooms from '../components/Chat/Rooms'
 
 // passing signup, login, and user through app
 const Main = ({signup, login, currentUser, socket, createProfile}) => {
