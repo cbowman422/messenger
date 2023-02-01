@@ -39,6 +39,7 @@ function App() {
       console.log(newProfile)
       // put the returned user object in state for CurrentUser
       setCurrentProfile(createdProfile)
+      console.log(currentProfile)
       return createdProfile
     } catch (err) {
       console.log(err)

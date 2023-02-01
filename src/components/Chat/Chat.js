@@ -25,18 +25,18 @@ const Chat= ({socket, currentUser})=>
   const BASE_URL= "https://capstone-chat.herokuapp.com/chat";
 
   // useEffect to store Chat JSON as setChat state
-  // const getChat= async()=>
-  // {
-  //   try
-  //   {
-  //     const res= await fetch(BASE_URL)
-  //     const allChat= await res.json()
-  //     setChat(allChat)
-  //   }catch(err)
-  //   {
-  //     console.log(err)
-  //   }
-  // }
+  const getChat= async()=>
+  {
+    try
+    {
+      const res= await fetch(BASE_URL)
+      const allChat= await res.json()
+      setChat(allChat)
+    }catch(err)
+    {
+      console.log(err)
+    }
+  }
 
   // event handler to setNewForm state to inputs when inputs are changed
   const handleChange= (e)=>
@@ -162,18 +162,6 @@ const Chat= ({socket, currentUser})=>
   
 
   useEffect(() => {
-    const getChat= async()=>
-  {
-    try
-    {
-      const res= await fetch(BASE_URL)
-      const allChat= await res.json()
-      setChat(allChat)
-    }catch(err)
-    {
-      console.log(err)
-    }
-  }
     getChat()
     socket.on('messageResponse', (data) => setMessagesLibrary([...messagesLibrary, data]));
     socket.on('messageResponseSocket', (data) => setMessages([...messages, data]))
