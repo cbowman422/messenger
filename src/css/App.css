@@ -9,3 +9,21 @@
   --green: #101109;
   --transition: all 0.3s ease-in-out;
 }
+
+
+.appContainer{
+  border: solid salmon;
+  display: grid;
+  grid-template-columns: .5fr 1fr;
+  grid-template-rows: .1fr 1fr;
+  grid-template-areas: 
+    "header header"
+    "rooms chat";
+
+}
+
+
+
+
+
+ 

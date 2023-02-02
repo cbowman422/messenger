@@ -130,11 +130,10 @@ function App() {
   }
 
 return (
-  <div>
+  <div className={"appContainer"}>
     < Header loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} />
      <Rooms currentUser={currentUser} />
     < Main login={loginUser} currentUser={currentUser} signup={registerUser} socket={socket} createProfile={registerProfile} />
-
   </div>
 );
 }
