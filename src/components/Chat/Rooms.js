@@ -136,7 +136,8 @@ const Rooms = ({currentUser}) => {
       <div className="roomsUsersContainer">
 
   {room?.map((roomMap) =>
-  { if (roomMap.usernameProfile !== currentUser.username){
+  { 
+    if (roomMap.usernameProfile !== currentUser.username && roomMap.usernameProfile !== 'undefined'){
 
     return(
       <div key={roomMap._id} >
