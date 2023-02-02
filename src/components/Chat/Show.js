@@ -5,7 +5,7 @@ import { getUserToken } from '../../utils/authToken'
 
 
 
-const Show= (props)=>
+const Show= ()=>
 {
   //set state for chat details and form changes for UPDATE ROUTE
   const [chat, setChat]= useState(null);
@@ -66,7 +66,7 @@ const Show= (props)=>
     }catch(err)
     { 
       console.log(err)
-      navigate(`/room/${chat.chatRoomUserTwo}`)
+      navigate(`/room/undefined`)
     }
   }
 
@@ -89,7 +89,7 @@ const Show= (props)=>
     }catch(err)
     {
       console.log(err)
-      navigate(URL)
+      navigate(`/room/undefined`)
     }
   }
 
@@ -99,38 +99,40 @@ const Show= (props)=>
   // Show Details Loaded function and JSX
   const loaded= ()=>
   {
-    return(
-      <>
-      <section>
-      <Link to={`/room/${chat.chatRoomUserTwo}`}>
-      <h1> &#60; </h1>
-      </Link>
-        <div className="chat">
-          {/* <h2>{chat.textChat}</h2> */}
-          <div>
+   
+      return(
+        <>
+        <section>
+        <Link to={`/room/${chat.chatRoomUserTwo}`}>
+        <h1> &#60; </h1>
+        </Link>
+          <div className="chat">
+            {/* <h2>{chat.textChat}</h2> */}
+            <div>
+            </div>
           </div>
-        </div>
-      </section>
-      <section>
-        <h2>Edit message  :</h2>
-        <form onSubmit={updateChat}>
-          <textarea
-              type="text"
-              value={editForm.textChat}
-              rows = "5" 
-              cols = "60"
-              name="textChat"
-              placeholder="textChat"
-              onChange={handleChange}
-          />
-          <input type="submit" value="Update Message" />
-        </form> 
-        <button className="delete" onClick={removeChat}>
-              Delete Message
-        </button>
-      </section>
-      </>
-    )
+        </section>
+        <section>
+          <h2>Edit message  :</h2>
+          <form onSubmit={updateChat}>
+            <textarea
+                type="text"
+                value={editForm.textChat}
+                rows = "5" 
+                cols = "60"
+                name="textChat"
+                placeholder="textChat"
+                onChange={handleChange}
+            />
+            <input type="submit" value="Update Message" />
+          </form> 
+          <button className="delete" onClick={removeChat}>
+                Delete Message
+          </button>
+        </section>
+        </>
+      )
+    
   }
 
   // Show Loading and JSX

@@ -152,7 +152,11 @@ const Chat= ({socket, currentUser})=>
         </div>
       )
 
-    } else 
+    } else if(id === 'undefined'){
+      return (<></>) 
+    }
+    
+    else 
     {
 
       // JSX for creating a new Chat when Chat is loaded
@@ -200,8 +204,13 @@ const Chat= ({socket, currentUser})=>
         </div>
       )
 
-    }
-    else {
+    } else if (id === 'undefined'){
+      return (
+        <div>
+          <h1> Not Authorized, please return to chat. </h1>
+          </div> 
+      )
+    } else {
       return (
         <div>
           <h2>Connected with {id}</h2>
