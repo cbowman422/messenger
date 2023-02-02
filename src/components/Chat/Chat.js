@@ -16,23 +16,21 @@ const Chat= ({socket, currentUser})=>
     textChat: "",
     chatRoomUserTwo: `${id}`,
   });
+  const [messages, setMessages] = useState([]);
+  const [messagesLibrary, setMessagesLibrary] = useState([]);
 
   // API BASE URL to mongodb backend 
   const BASE_URL= "https://capstone-chat.herokuapp.com/chat";
 
-
+  let element =	document.getElementById('scrollWindow')
 	function scrollToList()
 	{
-    
-	  let element =	document.getElementById('scrollWindow')
-    element.scrollTop = element.scrollHeight;
+    if (messagesLibrary.chatRoomUserTwo === currentUser.username && messagesLibrary.length > 1){
+      console.log("hit")
+      let element =	document.getElementById('scrollWindow')
+      element.scrollTop = element.scrollHeight;
+    }
 	}
-
-	// function scrollToListLivePublicChatRoom()
-	// {
-	//   let elementLivePublicChatRoom =	document.getElementById('scrollWindowLivePublicChatRoom')
-  //   elementLivePublicChatRoom.scrollTop = elementLivePublicChatRoom.scrollHeight;
-	// }
 
 
 
@@ -45,7 +43,7 @@ const Chat= ({socket, currentUser})=>
       const allChat= await res.json()
       setChat(allChat)
       // TODO this scroll
-     // scrollToList()
+      scrollToList()
     }catch(err)
     {
       console.log(err)
@@ -115,15 +113,19 @@ const Chat= ({socket, currentUser})=>
   }
 
   
+  
+  useEffect(() => {
+    getChat();
+    socket.on('messageResponse', (data) => setMessagesLibrary(data));
+    socket.on('messageResponseSocket', (data) => setMessages([...messages, data]))
+  }, [socket, messages, messagesLibrary]);
+  
+  
   const loading = () => (
     <section className="loading">
         <h2>...Searching for messages</h2>
     </section>
   );
-
-
-  const [messages, setMessages] = useState([]);
-  const [messagesLibrary, setMessagesLibrary] = useState([]);
 
 
   // Loaded chat function
@@ -173,16 +175,6 @@ const Chat= ({socket, currentUser})=>
 
   };
   
-
-  useEffect(() => {
-    getChat();
-    socket.on('messageResponse', (data) => setMessagesLibrary([...messagesLibrary, data]));
-    socket.on('messageResponseSocket', (data) => setMessages([...messages, data]))
-  }, [socket, messages, messagesLibrary]);
-
-
-
-
 
   const submissionField = () => {
     if (id === currentUser.username){
