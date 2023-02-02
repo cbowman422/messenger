@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react"
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate, Link } from "react-router-dom"
 import { getUserToken } from '../../utils/authToken'
 
 
@@ -102,18 +102,17 @@ const Show= (props)=>
     return(
       <>
       <section>
+      <Link to={`/room/${chat.chatRoomUserTwo}`}>
+      <h1> &#60; </h1>
+      </Link>
         <div className="chat">
-          <h1>Show Page</h1>
-          <h2>{chat.textChat}</h2>
+          {/* <h2>{chat.textChat}</h2> */}
           <div>
-            <button className="delete" onClick={removeChat}>
-              Remove Chat
-            </button>
           </div>
         </div>
       </section>
       <section>
-        <h2>Edit this Chat</h2>
+        <h2>Edit message  :</h2>
         <form onSubmit={updateChat}>
           <textarea
               type="text"
@@ -126,6 +125,9 @@ const Show= (props)=>
           />
           <input type="submit" value="Update Chat" />
         </form> 
+        <button className="delete" onClick={removeChat}>
+              Delete Chat
+        </button>
       </section>
       </>
     )

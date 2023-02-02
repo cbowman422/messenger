@@ -128,7 +128,7 @@ const Rooms = ({currentUser}) => {
 
   return (
       <>
-      <h2> Public Chat Rooms : </h2>
+      <h2> Public Chat : </h2>
       <Link to={'/room/LivePublicChatRoom'}>
       <p>Live Public Chat Room!</p>
       </Link>

@@ -5,3 +5,7 @@
   overflow:scroll;
   padding:30px;
 }
+
+textarea{
+  resize:none;
+}

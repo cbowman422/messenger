@@ -10,17 +10,33 @@ const Header = ({signOut, currentUser}) => {
     signOut();
   }
 
+const active = () => {
+  
+    return (
+      <Link to={`/room/${currentUser.username}`}>
+      <p className="userStatus">{currentUser.username}</p>
+      </Link>
+    )
+  
+}
+
+const notActive = () => {
+
+    return (
+      <p> Offline </p>
+    )
+  
+}
+
   return (
-    <div className="headerContainer">
+       <div className="headerContainer">
       <Link to={'/login'}>
        <button>sign in</button> 
       </Link>
       <Link to={'/login'}>
        <button onClick={clearLocalStorage}>signout</button> 
       </Link>
-      <Link to={`/room/${currentUser.username}`}>
-      <p className="userStatus">{currentUser.username}</p>
-      </Link>
+      <section> {currentUser.username?active():notActive()}</section>
     </div>
   )
 }

@@ -44,7 +44,7 @@ const Chat= ({socket, currentUser})=>
   const handleSubmit= async(e)=>
   {
   // 0. prevent default (event object method)
-    e.preventDefault()
+   e.preventDefault()
 
   // setting currentState variable as newForm state input after submit
     const currentState = {...newForm}
@@ -122,7 +122,7 @@ const Chat= ({socket, currentUser})=>
           }
             return(
               <div key={messageMapIdx} className='chat-card'>
-                <p>{messagesMap.username}: {messagesMap.text}</p>
+                <p>{messagesMap.username} : {messagesMap.text}</p>
                 </div>
             );
           })
@@ -142,7 +142,7 @@ const Chat= ({socket, currentUser})=>
           return( 
             <div key={chatMap._id}>
                 <Link to={`/chat/${chatMap._id}`}>
-                <p>{chatMap.owner.username}: {chatMap.textChat}</p>
+                <p>{chatMap.owner.username} : {chatMap.textChat}</p>
                 </Link>
               
             </div>
@@ -164,6 +164,9 @@ const Chat= ({socket, currentUser})=>
   }, [socket, messages, messagesLibrary]);
 
 
+
+
+
   const awayMessageNote = () => {
     if (id === currentUser.username){
       return (
@@ -179,7 +182,7 @@ const Chat= ({socket, currentUser})=>
             placeholder="text"
             value={newForm.textChat}
             onChange={handleChange}
-          />
+          > </textarea>
           </label>
           <input type="submit" value="Set Away Message" />
         </form>
@@ -193,17 +196,24 @@ const Chat= ({socket, currentUser})=>
           <h2>Connected with {id}</h2>
           <form onSubmit={handleSubmit}>
           <label>
-            <input 
+          <textarea 
+            type='text' 
+            name='textChat' 
+            rows = "5" 
+            cols = "60"
+            placeholder="text"
+            value={newForm.textChat}
+            onChange={handleChange}
+          > </textarea>
+            {/* <input 
               type='text' 
               name='textChat' 
-              rows = "5" 
-              cols = "60"
               placeholder="text"
               value={newForm.textChat}
               onChange={handleChange}
-            />
+            /> */}
           </label>
-          <input type="submit" value="Send Message" />
+          <input type="submit" value="Send" />
         </form>
         </div>
       )
