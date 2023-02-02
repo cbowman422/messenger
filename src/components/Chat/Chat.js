@@ -20,6 +20,16 @@ const Chat= ({socket, currentUser})=>
   // API BASE URL to mongodb backend 
   const BASE_URL= "https://capstone-chat.herokuapp.com/chat";
 
+
+	function scrollToList()
+	{
+	  let element =	document.getElementById('scrollWindow')
+    element.scrollTop = element.scrollHeight;
+	}
+
+
+
+
   // useEffect to store Chat JSON as setChat state
   const getChat= async()=>
   {
@@ -28,11 +38,14 @@ const Chat= ({socket, currentUser})=>
       const res= await fetch(BASE_URL)
       const allChat= await res.json()
       setChat(allChat)
+      // TODO this scroll
+      scrollToList()
     }catch(err)
     {
       console.log(err)
     }
   }
+
 
   // event handler to setNewForm state to inputs when inputs are changed
   const handleChange= (e)=>
@@ -40,16 +53,15 @@ const Chat= ({socket, currentUser})=>
     setNewForm({ ...newForm, [e.target.name]: e.target.value });
   };
 
+
   // event handler to POST a chat with newForm State input
   const handleSubmit= async(e)=>
   {
   // 0. prevent default (event object method)
    e.preventDefault()
-
   // setting currentState variable as newForm state input after submit
     const currentState = {...newForm}
 
- 
     //  this is for sockets -------------------------
     if(id === 'LivePublicChatRoom')
     { 
@@ -65,8 +77,6 @@ const Chat= ({socket, currentUser})=>
           chatRoomUserTwo: `${id}`,
       }) 
     } else {
-
-
         // 1. check any fields for property data types / truthy value (function call - stretch)
           try{
               const requestOptions = {
@@ -136,7 +146,7 @@ const Chat= ({socket, currentUser})=>
 
       // JSX for creating a new Chat when Chat is loaded
       return (
-        <div className="scrollWindow">
+        <div id="scrollWindow">
         {chat?.map((chatMap) => { if ((chatMap.chatRoomUserTwo === id || chatMap.chatRoomUserTwo ===  currentUser.username) && (chatMap.owner.username === id || chatMap.owner.username === currentUser.username)){
 
           return( 
@@ -167,7 +177,7 @@ const Chat= ({socket, currentUser})=>
 
 
 
-  const awayMessageNote = () => {
+  const submissionField = () => {
     if (id === currentUser.username){
       return (
         <div>
@@ -228,9 +238,9 @@ const Chat= ({socket, currentUser})=>
         <Link to={`/rooms`}>
           <h1> &#60; </h1>
         </Link>
-        <section className="awayMessage">{currentUser ? awayMessageNote() : <> </>}</section>
-    </section>
-      <section className="chat-list">{chat && chat.length ? loaded() : loading()}</section>
+       <section className="chat-list">{chat && chat.length ? loaded() : loading()}</section>
+        <section className="awayMessage">{currentUser ? submissionField() : <> </>}</section>
+       </section>
     </div>
   );
 }

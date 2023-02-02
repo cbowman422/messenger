@@ -1,9 +1,10 @@
-.scrollWindow{
-  width:75%;
-  height:400px;
+#scrollWindow{
+  width:90%;
+  height:200px;
   line-height:10px;
-  overflow:scroll;
+  overflow-y:scroll;
   padding:30px;
+  border: solid green;
 }
 
 textarea{
