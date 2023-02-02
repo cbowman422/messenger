@@ -24,7 +24,7 @@ const Chat= ({socket, currentUser})=>
   // API BASE URL to mongodb backend 
   const BASE_URL= "https://capstone-chat.herokuapp.com/chat";
 
-  let element =	document.getElementById('scrollWindow')
+
 	function scrollToList()
 	{
     if (messagesLibrary.chatRoomUserTwo === currentUser.username){
@@ -38,7 +38,7 @@ const Chat= ({socket, currentUser})=>
         
         let element =	document.getElementById('scrollWindow')
         element.scrollTop = element.scrollHeight;
-     }, 100);
+     }, 700);
     }
 	}
 

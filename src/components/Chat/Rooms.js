@@ -124,6 +124,17 @@ const Rooms = ({currentUser}) => {
     }
   
 
+
+	function scrollToList()
+	{
+      setTimeout(function(){
+        
+        let element =	document.getElementById('scrollWindow')
+        element.scrollTop = element.scrollHeight;
+     }, 700);
+    
+	}
+
     useEffect(()=>{getProfile();}, [])
 
   return (
@@ -141,7 +152,7 @@ const Rooms = ({currentUser}) => {
 
     return(
       <div key={roomMap._id} >
-        <Link to={`/room/${roomMap.usernameProfile}`}>
+        <Link to={`/room/${roomMap.usernameProfile}`} onClick={scrollToList}>
         <p>{roomMap.usernameProfile}</p>
         </Link>
       </div>
