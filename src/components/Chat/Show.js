@@ -62,7 +62,7 @@ const Show= ()=>
       console.log(updatedChat)
       setChat(updatedChat);
       setEditForm(updatedChat);
-      // navigate(`/room/${chat.chatRoomUserTwo}`);
+      navigate(`/room/${chat.chatRoomUserTwo}`);
     }catch(err)
     { 
       console.log(err)

@@ -37,6 +37,7 @@ if(currentUser===undefined){
       <Link to={'/login'}>
        <button onClick={clearLocalStorage}>signout</button> 
       </Link>
+      <p> Offline </p>
     </div>
   )
 } else {

@@ -5,6 +5,7 @@ import RegisterForm from '../components/AuthForms/RegisterForm'
 import Chat from '../components/Chat/Chat'
 import Show from '../components/Chat/Show'
 import Rooms from '../components/Chat/Rooms'
+import NotFound from './NotFound'
 
 // passing signup, login, and user through app
 const Main = ({signup, login, currentUser, socket, createProfile}) => {
@@ -16,6 +17,7 @@ const Main = ({signup, login, currentUser, socket, createProfile}) => {
         <Route path="/chat/:id" element={<Show/>}/>
         <Route path="/" element={<RegisterForm signup={signup} createProfile={createProfile} />}/>
         <Route path="/login/" element={<LoginForm login={login}/>}/>
+        <Route path="*" element={<NotFound />}/>
       </Routes>
     </div>
   )
