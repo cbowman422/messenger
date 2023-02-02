@@ -66,7 +66,7 @@ const Show= (props)=>
     }catch(err)
     { 
       console.log(err)
-      navigate(URL)
+      navigate(`/room/${chat.chatRoomUserTwo}`)
     }
   }
 
