@@ -21,3 +21,7 @@
 textarea{
   resize:none;
 }
+
+.chatContainer{
+  border: solid pink
+}

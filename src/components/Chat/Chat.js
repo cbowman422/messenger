@@ -246,7 +246,7 @@ const Chat= ({socket, currentUser})=>
 
   // conditional return to return loading and loaded JSX depending on 
   return (
-    <div>
+    <div className={"chatContainer"}>
         <section>
         <Link to={`/rooms`}>
           <h1> &#60; </h1>

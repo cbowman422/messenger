@@ -138,7 +138,7 @@ const Rooms = ({currentUser}) => {
     useEffect(()=>{getProfile();}, [])
 
   return (
-      <>
+      <div className={"roomComponent"}>
       <h2> Public Chat : </h2>
       <Link to={'/room/LivePublicChatRoom'}>
       <p>Live Public Chat Room!</p>
@@ -162,7 +162,7 @@ const Rooms = ({currentUser}) => {
   )
   } 
      </div>
-      </>
+      </div>
     )
 
   
