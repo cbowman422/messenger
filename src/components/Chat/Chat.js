@@ -207,7 +207,9 @@ const Chat= ({socket, currentUser})=>
     } else if (id === 'undefined'){
       return (
         <div>
+                 <Link to={`/rooms`}>
           <h1> Not Authorized, please return to chat. </h1>
+                 </Link>
           </div> 
       )
     } else {
