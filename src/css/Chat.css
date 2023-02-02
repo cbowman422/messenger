@@ -7,6 +7,17 @@
   border: solid green;
 }
 
+
+#scrollWindowLivePublicChatRoom{
+  width:90%;
+  max-height:200px;
+  line-height:10px;
+  overflow-y:scroll;
+  padding:30px;
+  border: solid yellow;
+
+}
+
 textarea{
   resize:none;
 }

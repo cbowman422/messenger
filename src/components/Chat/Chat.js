@@ -23,10 +23,16 @@ const Chat= ({socket, currentUser})=>
 
 	function scrollToList()
 	{
+    
 	  let element =	document.getElementById('scrollWindow')
     element.scrollTop = element.scrollHeight;
 	}
 
+	// function scrollToListLivePublicChatRoom()
+	// {
+	//   let elementLivePublicChatRoom =	document.getElementById('scrollWindowLivePublicChatRoom')
+  //   elementLivePublicChatRoom.scrollTop = elementLivePublicChatRoom.scrollHeight;
+	// }
 
 
 
@@ -39,7 +45,7 @@ const Chat= ({socket, currentUser})=>
       const allChat= await res.json()
       setChat(allChat)
       // TODO this scroll
-      scrollToList()
+     // scrollToList()
     }catch(err)
     {
       console.log(err)
@@ -119,13 +125,14 @@ const Chat= ({socket, currentUser})=>
   const [messages, setMessages] = useState([]);
   const [messagesLibrary, setMessagesLibrary] = useState([]);
 
+
   // Loaded chat function
   const loaded = () =>
   { 
     if(id === 'LivePublicChatRoom')
     { 
       return (
-        <>
+        <div id="scrollWindowLivePublicChatRoom">
         
         {messages?.map((messagesMap, messageMapIdx) =>
           { if(messagesMap.chatRoomUserTwo === 'LivePublicChatRoom'){
@@ -138,7 +145,7 @@ const Chat= ({socket, currentUser})=>
           })
           }
 
-        </>
+        </div>
       )
 
     } else 
@@ -181,7 +188,7 @@ const Chat= ({socket, currentUser})=>
     if (id === currentUser.username){
       return (
         <div>
-          <h1> Add an Away Message here that will appear to each user in your Private Chats! </h1>
+          <h1> Set Away Message that will appear to each user in your Private Chats : </h1>
           <form onSubmit={handleSubmit}>
           <label>
           <textarea 
@@ -213,15 +220,8 @@ const Chat= ({socket, currentUser})=>
             cols = "60"
             placeholder="text"
             value={newForm.textChat}
-            onChange={handleChange}
-          > </textarea>
-            {/* <input 
-              type='text' 
-              name='textChat' 
-              placeholder="text"
-              value={newForm.textChat}
-              onChange={handleChange}
-            /> */}
+            onChange={handleChange}> 
+          </textarea>
           </label>
           <input type="submit" value="Send" />
         </form>

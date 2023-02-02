@@ -123,10 +123,10 @@ const Show= (props)=>
               placeholder="textChat"
               onChange={handleChange}
           />
-          <input type="submit" value="Update Chat" />
+          <input type="submit" value="Update Message" />
         </form> 
         <button className="delete" onClick={removeChat}>
-              Delete Chat
+              Delete Message
         </button>
       </section>
       </>
