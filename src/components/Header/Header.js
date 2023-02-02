@@ -28,6 +28,7 @@ const notActive = () => {
   
 }
 
+if(currentUser===undefined){
   return (
        <div className="headerContainer">
       <Link to={'/login'}>
@@ -36,9 +37,21 @@ const notActive = () => {
       <Link to={'/login'}>
        <button onClick={clearLocalStorage}>signout</button> 
       </Link>
-      <section> {currentUser.username?active():notActive()}</section>
     </div>
   )
+} else {
+  return (
+    <div className="headerContainer">
+   <Link to={'/login'}>
+    <button>sign in</button> 
+   </Link>
+   <Link to={'/login'}>
+    <button onClick={clearLocalStorage}>signout</button> 
+   </Link>
+   <section> {currentUser.username?active():notActive()}</section>
+ </div>
+)
+}
 }
 
 export default Header
