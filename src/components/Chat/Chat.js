@@ -38,7 +38,7 @@ const Chat= ({socket, currentUser})=>
         
         let element =	document.getElementById('scrollWindow')
         element.scrollTop = element.scrollHeight;
-     }, 500);
+     }, 100);
     }
 	}
 

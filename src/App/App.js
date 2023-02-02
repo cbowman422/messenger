@@ -5,6 +5,8 @@ import {getUserToken, setUserToken, clearUserToken} from '../utils/authToken'
 import Main from '../pages/Main';
 import Header from '../components/Header/Header';
 import '../css/App.css'
+import Rooms from '../components/Chat/Rooms';
+
 
 // Connecting Socket.io server to React App
 import socketIO from 'socket.io-client';
@@ -130,8 +132,9 @@ function App() {
 return (
   <div>
     < Header loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} />
+     <Rooms currentUser={currentUser} />
     < Main login={loginUser} currentUser={currentUser} signup={registerUser} socket={socket} createProfile={registerProfile} />
-    
+
   </div>
 );
 }
