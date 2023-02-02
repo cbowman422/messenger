@@ -28,9 +28,17 @@ const Chat= ({socket, currentUser})=>
 	function scrollToList()
 	{
     if (messagesLibrary.chatRoomUserTwo === currentUser.username){
-      console.log("hit")
+   
       let element =	document.getElementById('scrollWindow')
       element.scrollTop = element.scrollHeight;
+    } 
+    if (messagesLibrary.chatRoomUserTwo === ""){
+  
+      setTimeout(function(){
+        
+        let element =	document.getElementById('scrollWindow')
+        element.scrollTop = element.scrollHeight;
+     }, 500);
     }
 	}
 

@@ -1,6 +1,6 @@
 #scrollWindow{
   width:90%;
-  max-height:200px;
+  height:150px;
   line-height:10px;
   overflow-y:scroll;
   padding:30px;
@@ -10,7 +10,7 @@
 
 #scrollWindowLivePublicChatRoom{
   width:90%;
-  max-height:200px;
+  height:150px;
   line-height:10px;
   overflow-y:scroll;
   padding:30px;
