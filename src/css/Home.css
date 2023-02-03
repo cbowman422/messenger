@@ -1,3 +1,17 @@
+
+
+.homeGrid{
+    display: grid;
+  grid-template-columns: .5fr 1fr;
+  grid-template-rows: .1fr 1fr;
+  grid-template-areas: 
+    "header header"
+    "rooms home" ;
+  
+
+}
+
 .homeComponent{
   border: solid teal;
+ grid-area: home;
 }

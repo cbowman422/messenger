@@ -1,6 +1,7 @@
 .headerContainer{
 border: solid blue;
 grid-area: header;
+
 }
 
 .userStatus{

@@ -4,8 +4,10 @@ import { Link, useParams } from "react-router-dom";
 import { getUserToken } from '../../utils/authToken';
 import '../../css/Chat.css'
 
+import Header from '../Header/Header';
+import Rooms from './Rooms';
 
-const Chat= ({socket, currentUser})=> 
+const Chat= ({currentUser, socket, isAuthenticated, signOutHandler})=> 
 {
 
   const { id } = useParams()
@@ -253,6 +255,9 @@ const Chat= ({socket, currentUser})=>
 
   // conditional return to return loading and loaded JSX depending on 
   return (
+    <div className={"chatGrid"}>
+    <Header loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} />
+    <Rooms currentUser={currentUser} socket={socket} />
     <div className={"chatContainer"}>
         <section>
         <Link to={`/rooms`}>
@@ -261,6 +266,7 @@ const Chat= ({socket, currentUser})=>
        <section className="chat-list">{chat && chat.length ? loaded() : loading()}</section>
         <section className="awayMessage">{currentUser ? submissionField() : <> </>}</section>
        </section>
+    </div>
     </div>
   );
 }

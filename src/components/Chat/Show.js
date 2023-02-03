@@ -2,10 +2,13 @@ import React from 'react'
 import { useState, useEffect } from "react"
 import { useParams, useNavigate, Link } from "react-router-dom"
 import { getUserToken } from '../../utils/authToken'
+import '../../css/Show.css'
+
+import Header from '../Header/Header'
+import Rooms from './Rooms'
 
 
-
-const Show= ()=>
+const Show= ({currentUser, socket, isAuthenticated, signOutHandler})=>
 {
   //set state for chat details and form changes for UPDATE ROUTE
   const [chat, setChat]= useState(null);
@@ -155,7 +158,15 @@ const Show= ()=>
   }
 
   // returned conditional functions and JSX
-  return chat ? loaded() : loading()
+  return (
+  <div className={"showGrid"}>
+    <Header loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} />
+    <Rooms currentUser={currentUser} socket={socket} />
+  <section className={"showComponent"}>
+    {chat ? loaded() : loading()}
+  </section>
+  </div>
+  )
 }
 
 export default Show

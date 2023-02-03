@@ -9,13 +9,13 @@ import NotFound from './NotFound'
 import Home from './Home'
 
 // passing signup, login, and user through app
-const Main = ({signup, login, currentUser, socket, createProfile}) => {
+const Main = ({signup, login, currentUser, socket, createProfile, isAuthenticated, signOutHandler}) => {
   return (
     <div>
       <Routes>
-      <Route path="/rooms" element={<Home />}/>
-        <Route path="/room/:id" element={<Chat socket={socket} currentUser={currentUser} />}/>
-        <Route path="/chat/:id" element={<Show/>}/>
+      <Route path="/rooms" element={<Home loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} socket={socket}  />}/>
+        <Route path="/room/:id" element={<Chat socket={socket} currentUser={currentUser} loggedIn={isAuthenticated} signOut={signOutHandler} />}/>
+        <Route path="/chat/:id" element={<Show loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} socket={socket}/>}/>
         <Route path="/" element={<RegisterForm signup={signup} createProfile={createProfile} />}/>
         <Route path="/login/" element={<LoginForm login={login}/>}/>
         <Route path="*" element={<NotFound />}/>

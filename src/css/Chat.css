@@ -22,6 +22,16 @@ textarea{
   resize:none;
 }
 
+
+.chatGrid{
+  display: grid;
+  grid-template-columns: .5fr 1fr;
+  grid-template-rows: .1fr 1fr;
+  grid-template-areas: 
+    "header header"
+    "rooms chat" ;
+}
+
 .chatContainer{
   border: solid pink;
   grid-area: chat;
