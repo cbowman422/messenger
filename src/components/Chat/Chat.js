@@ -44,6 +44,20 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler})=>
     }
 	}
 
+  function scrollToListOnClick()
+	{
+
+    if (id === "LivePublicChatRoom"){
+   
+      let element =	document.getElementById('scrollWindowLivePublicChatRoom')
+      element.scrollTop = element.scrollHeight;
+    } else {
+      let element2 =	document.getElementById('scrollWindow')
+      element2.scrollTop = element2.scrollHeight;
+    } 
+ 
+	}
+
 
 
   // useEffect to store Chat JSON as setChat state
@@ -75,6 +89,11 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler})=>
   {
   // 0. prevent default (event object method)
    e.preventDefault()
+
+   // TODO this scroll on click stuff
+   scrollToListOnClick()
+
+   
   // setting currentState variable as newForm state input after submit
     const currentState = {...newForm}
 
