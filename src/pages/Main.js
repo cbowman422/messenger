@@ -9,7 +9,12 @@ import NotFound from './NotFound'
 import Home from './Home'
 
 // passing signup, login, and user through app
-const Main = ({signup, login, currentUser, socket, createProfile, isAuthenticated, signOutHandler}) => {
+const Main = ({signup, login, currentUser, socket, createProfile, isAuthenticated, signOutHandler, signOut}) => {
+
+  function signOutHandler(){
+    signOut()
+    }
+
   return (
     <div>
       <Routes>

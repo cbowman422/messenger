@@ -7,10 +7,12 @@ import '../../css/Chat.css'
 import Header from '../Header/Header';
 import Rooms from './Rooms';
 
-const Chat= ({currentUser, socket, isAuthenticated, signOutHandler})=> 
+const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=> 
 {
 
+  
   const { id } = useParams()
+  
 
   // defining state for Chat and for a new chat form input
   const [chat, setChat] = useState([]);
@@ -40,7 +42,7 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler})=>
         
         let element =	document.getElementById('scrollWindow')
         element.scrollTop = element.scrollHeight;
-     }, 700);
+     }, 400);
     }
     if (id === "LivePublicChatRoom" && messages.length > 4){
       let element =	document.getElementById('scrollWindowLivePublicChatRoom')
@@ -55,18 +57,19 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler})=>
    
       let element =	document.getElementById('scrollWindowLivePublicChatRoom')
       element.scrollTop = element.scrollHeight;
-    } else {
+    } else if (id !== "LivePublicChatRoom") {
       let element =	document.getElementById('scrollWindow')
       element.scrollTop = element.scrollHeight;
     } 
  
 	}
 
-
+ 
 
   // useEffect to store Chat JSON as setChat state
   const getChat= async()=>
   {
+   
     try
     {
       const res= await fetch(BASE_URL)
@@ -115,7 +118,7 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler})=>
           textChat: "",
           chatRoomUserTwo: `${id}`,
       }) 
-    } else {
+    } else if (id !== 'LivePublicChatRoom') {
         // 1. check any fields for property data types / truthy value (function call - stretch)
           try{
               const requestOptions = {
@@ -264,6 +267,10 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler})=>
   }
 
 
+  function signOutHandler(){
+    signOut()
+    }
+    
   // conditional return to return loading and loaded JSX depending on 
   return (
     <div className={"chatGrid"}>

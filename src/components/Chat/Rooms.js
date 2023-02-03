@@ -131,7 +131,7 @@ const Rooms = ({currentUser, socket}) => {
         
         let element =	document.getElementById('scrollWindow')
         element.scrollTop = element.scrollHeight;
-     }, 700);
+     }, 400);
     
 	}
 

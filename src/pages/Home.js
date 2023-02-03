@@ -4,7 +4,12 @@ import '../css/Home.css'
 import Header from '../components/Header/Header'
 import Rooms from '../components/Chat/Rooms'
 
-const Home = ({currentUser, socket, isAuthenticated, signOutHandler}) => {
+const Home = ({currentUser, socket, isAuthenticated, signOutHandler, signOut}) => {
+
+function signOutHandler(){
+signOut()
+}
+
   return (
     <div className={"homeGrid"}>
     <Header loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} />

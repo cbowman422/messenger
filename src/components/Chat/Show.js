@@ -8,7 +8,7 @@ import Header from '../Header/Header'
 import Rooms from './Rooms'
 
 
-const Show= ({currentUser, socket, isAuthenticated, signOutHandler})=>
+const Show= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
 {
   //set state for chat details and form changes for UPDATE ROUTE
   const [chat, setChat]= useState(null);
@@ -149,6 +149,12 @@ const Show= ({currentUser, socket, isAuthenticated, signOutHandler})=>
       </section>
     )
   }
+
+
+  function signOutHandler(){
+    signOut()
+    }
+
 
   // returned conditional functions and JSX
   return (
