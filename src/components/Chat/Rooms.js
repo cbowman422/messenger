@@ -158,7 +158,7 @@ const Rooms = ({currentUser, socket}) => {
 
   {room?.map((roomMap) =>
   { 
-    if (roomMap.usernameProfile !== currentUser.username && roomMap.usernameProfile !== 'undefined'){
+    if (roomMap.usernameProfile !== currentUser.username){
 
     return(
       <div key={roomMap._id} >

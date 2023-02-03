@@ -162,11 +162,7 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler})=>
         </div>
       )
 
-    } else if(id === 'undefined'){
-      return (<></>) 
-    }
-    
-    else 
+    } else 
     {
 
       // JSX for creating a new Chat when Chat is loaded
@@ -221,14 +217,6 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler})=>
         </div>
       )
 
-    } else if (id === 'undefined'){
-      return (
-        <div>
-                 <Link to={`/rooms`}>
-          <h1> Not Authorized, please return to chat. </h1>
-                 </Link>
-          </div> 
-      )
     } else {
       return (
         <div>
