@@ -42,6 +42,10 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler})=>
         element.scrollTop = element.scrollHeight;
      }, 700);
     }
+    if (id === "LivePublicChatRoom" && messages.length > 4){
+      let element =	document.getElementById('scrollWindowLivePublicChatRoom')
+      element.scrollTop = element.scrollHeight;
+    }
 	}
 
   function scrollToListOnClick()
@@ -52,8 +56,8 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler})=>
       let element =	document.getElementById('scrollWindowLivePublicChatRoom')
       element.scrollTop = element.scrollHeight;
     } else {
-      let element2 =	document.getElementById('scrollWindow')
-      element2.scrollTop = element2.scrollHeight;
+      let element =	document.getElementById('scrollWindow')
+      element.scrollTop = element.scrollHeight;
     } 
  
 	}
