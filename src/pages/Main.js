@@ -18,7 +18,8 @@ const Main = ({signup, login, currentUser, socket, createProfile, isAuthenticate
   return (
     <div>
       <Routes>
-      <Route path="/rooms" element={<Home loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} socket={socket}  />}/>
+      {/* <Route path="/rooms" element={<Home loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} socket={socket}  />}/> */}
+      <Route path="/rooms" element={<Rooms loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} socket={socket}  />}/>
         <Route path="/room/:id" element={<Chat socket={socket} currentUser={currentUser} loggedIn={isAuthenticated} signOut={signOutHandler} />}/>
         <Route path="/chat/:id" element={<Show loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} socket={socket}/>}/>
         <Route path="/" element={<RegisterForm signup={signup} createProfile={createProfile} />}/>
@@ -30,3 +31,5 @@ const Main = ({signup, login, currentUser, socket, createProfile, isAuthenticate
 }
 
 export default Main
+
+

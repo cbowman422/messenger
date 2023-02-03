@@ -270,12 +270,12 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
   function signOutHandler(){
     signOut()
     }
-    
+
   // conditional return to return loading and loaded JSX depending on 
   return (
     <div className={"chatGrid"}>
-    <Header loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} />
-    <Rooms currentUser={currentUser} socket={socket} />
+    {/* <Header loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} />
+    <Rooms currentUser={currentUser} socket={socket} /> */}
     <div className={"chatContainer"}>
         <section>
         <Link to={`/rooms`}>
@@ -290,9 +290,6 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
 }
 
 export default Chat
-
-
-
 
 
 

@@ -159,8 +159,8 @@ const Show= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
   // returned conditional functions and JSX
   return (
   <div className={"showGrid"}>
-    <Header loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} />
-    <Rooms currentUser={currentUser} socket={socket} />
+    {/* <Header loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} />
+    <Rooms currentUser={currentUser} socket={socket} /> */}
   <section className={"showComponent"}>
     {chat ? loaded() : loading()}
   </section>
@@ -169,3 +169,5 @@ const Show= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
 }
 
 export default Show
+
+

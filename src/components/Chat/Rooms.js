@@ -179,3 +179,4 @@ const Rooms = ({currentUser, socket}) => {
 }
 
 export default Rooms
+
