@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 import { Link } from "react-router-dom";
 import '../../css/Rooms.css'
 
-const Rooms = ({currentUser}) => {
+const Rooms = ({currentUser, socket}) => {
 
    
   const [room, setRoom] = useState()
@@ -135,7 +135,17 @@ const Rooms = ({currentUser}) => {
     
 	}
 
-    useEffect(()=>{getProfile();}, [])
+
+
+  const [profile, setProfile] = useState()
+
+    useEffect(() => {
+      getProfile();
+      socket.on('messageResponseProfile', (data) => setProfile(data));
+    }, [socket, profile]);
+
+
+
 
   return (
       <div className={"roomComponent"}>
