@@ -161,7 +161,7 @@ const Show= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
   <div className={"showGrid"}>
 
     <Header loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} />
-    <Rooms currentUser={currentUser} socket={socket} />
+    {/* <Rooms currentUser={currentUser} socket={socket} /> */}
 
   <section className={"showComponent"}>
     {chat ? loaded() : loading()}
