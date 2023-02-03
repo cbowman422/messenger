@@ -32,7 +32,7 @@ const Chat= ({socket, currentUser})=>
       let element =	document.getElementById('scrollWindow')
       element.scrollTop = element.scrollHeight;
     } 
-    if (messagesLibrary.chatRoomUserTwo === ""){
+    if (messagesLibrary.chatRoomUserTwo === "" && id !== "LivePublicChatRoom"){
   
       setTimeout(function(){
         
