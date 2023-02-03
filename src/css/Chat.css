@@ -40,8 +40,24 @@ textarea{
 
 .currentUserTextChat{
  line-height: 120%;
+
 }
+
+.currentUserTextChatLink{
+  text-decoration: none;
+  color: black;
+}
+
+#currentUserTextSpan{
+ color: rgb(0, 138, 62);
+}
+
 
 .userTwoTextChat{
   line-height: 120%;
+}
+
+
+#userTwoTextSpan{
+  color: rgb(0, 85, 255);
 }

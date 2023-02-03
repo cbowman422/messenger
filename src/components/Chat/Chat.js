@@ -203,8 +203,8 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
 
           return( 
             <div key={chatMap._id} className={"currentUserTextChat"}>
-                <Link to={`/chat/${chatMap._id}`}>
-                <p>{chatMap.owner.username} : {chatMap.textChat}</p>
+                <Link to={`/chat/${chatMap._id}`} className={"currentUserTextChatLink"}>
+                <p><span id={"currentUserTextSpan"}>{chatMap.owner.username}</span>  : {chatMap.textChat}</p>
                 </Link>
               
             </div>
@@ -212,7 +212,7 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
         } if ((chatMap.chatRoomUserTwo === id || chatMap.chatRoomUserTwo ===  currentUser.username) && (chatMap.owner.username === id || chatMap.owner.username === currentUser.username)) { return( 
 
           <div key={chatMap._id} className={"userTwoTextChat"}>
-              <p>{chatMap.owner.username} : {chatMap.textChat}</p>
+              <p><span id={"userTwoTextSpan"}>{chatMap.owner.username}</span> : {chatMap.textChat}</p>
           </div>
         )
 
