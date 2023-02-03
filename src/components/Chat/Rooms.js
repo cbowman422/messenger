@@ -128,7 +128,6 @@ const Rooms = ({currentUser, socket}) => {
 	function scrollToList()
 	{
       setTimeout(function(){
-        
         let element =	document.getElementById('scrollWindow')
         element.scrollTop = element.scrollHeight;
      }, 400);

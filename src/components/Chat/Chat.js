@@ -139,6 +139,7 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
               // update local state with response (json from be)
               setChat([...chat, createdChat])
               // reset newForm state so that our form empties out
+              // TODO IDIOT this is breaking my shit -----------------------------------------------
               setNewForm({
                   textChat: "",
                   chatRoomUserTwo: `${id}`,
@@ -155,8 +156,12 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
   useEffect(() => {
     getChat();
     socket.on('messageResponse', (data) => setMessagesLibrary(data));
+  }, [socket, messagesLibrary]);
+
+
+  useEffect(() => {
     socket.on('messageResponseSocket', (data) => setMessages([...messages, data]))
-  }, [socket, messages, messagesLibrary]);
+  }, [socket, messages]);
   
   
   const loading = () => (
@@ -271,11 +276,15 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
     signOut()
     }
 
+
+
   // conditional return to return loading and loaded JSX depending on 
   return (
     <div className={"chatGrid"}>
-    {/* <Header loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} />
-    <Rooms currentUser={currentUser} socket={socket} /> */}
+
+    <Header loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} />
+    {/* <Rooms currentUser={currentUser} socket={socket} /> */}
+
     <div className={"chatContainer"}>
         <section>
         <Link to={`/rooms`}>
@@ -290,6 +299,3 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
 }
 
 export default Chat
-
-
-
