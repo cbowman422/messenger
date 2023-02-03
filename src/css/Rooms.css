@@ -1,6 +1,6 @@
 .roomsUsersContainer{
   border: solid red;
-  width:150px;
+  width:160px;
   height:300px;
   line-height:10px;
   overflow-y:scroll;

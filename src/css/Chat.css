@@ -1,5 +1,5 @@
 #scrollWindow{
-  width:40%;
+  width:240px;
   height:150px;
   line-height:10px;
   overflow-y:scroll;
@@ -9,7 +9,7 @@
 
 
 #scrollWindowLivePublicChatRoom{
-  width:90%;
+  width:240px;
   height:150px;
   line-height:10px;
   overflow-y:scroll;

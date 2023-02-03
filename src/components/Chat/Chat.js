@@ -170,16 +170,23 @@ const Chat= ({socket, currentUser})=>
       // JSX for creating a new Chat when Chat is loaded
       return (
         <div id="scrollWindow">
-        {chat?.map((chatMap) => { if ((chatMap.chatRoomUserTwo === id || chatMap.chatRoomUserTwo ===  currentUser.username) && (chatMap.owner.username === id || chatMap.owner.username === currentUser.username)){
+        {chat?.map((chatMap) => { if ((chatMap.chatRoomUserTwo === id || chatMap.chatRoomUserTwo ===  currentUser.username) && (chatMap.owner.username === id || chatMap.owner.username === currentUser.username) && (chatMap.owner.username === currentUser.username)){
 
           return( 
-            <div key={chatMap._id}>
+            <div key={chatMap._id} className={"currentUserTextChat"}>
                 <Link to={`/chat/${chatMap._id}`}>
                 <p>{chatMap.owner.username} : {chatMap.textChat}</p>
                 </Link>
               
             </div>
           )
+        } if ((chatMap.chatRoomUserTwo === id || chatMap.chatRoomUserTwo ===  currentUser.username) && (chatMap.owner.username === id || chatMap.owner.username === currentUser.username)) { return( 
+
+          <div key={chatMap._id} className={"userTwoTextChat"}>
+              <p>{chatMap.owner.username} : {chatMap.textChat}</p>
+          </div>
+        )
+
         }
         })} 
         </div>
@@ -201,7 +208,7 @@ const Chat= ({socket, currentUser})=>
             type='text' 
             name='textChat' 
             rows = "5" 
-            cols = "60"
+            cols = "36"
             placeholder="text"
             value={newForm.textChat}
             onChange={handleChange}
@@ -230,7 +237,7 @@ const Chat= ({socket, currentUser})=>
             type='text' 
             name='textChat' 
             rows = "5" 
-            cols = "60"
+            cols = "36"
             placeholder="text"
             value={newForm.textChat}
             onChange={handleChange}> 
