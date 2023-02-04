@@ -50,9 +50,9 @@ const RegisterForm = ({signup, createProfile}) => {
   // Register Form JSX and export
   return (
     <div className="registerContainer">
-      <h1>Register a username</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Name: </label>
+      <h1>Register Username</h1>
+      <form onSubmit={handleSubmit} className="authForm">
+        <label htmlFor="username"></label>
         <input
           id="username"
           name="username"
@@ -60,10 +60,10 @@ const RegisterForm = ({signup, createProfile}) => {
           onChange={handleChange}
           maxLength="17"
           autoComplete="on"
+          placeholder="Username"
         />
         <br />
-        <br />
-        <label htmlFor="password">Password: </label>
+        <label htmlFor="password"> </label>
         <input
           id="password"
           name="password"
@@ -71,13 +71,13 @@ const RegisterForm = ({signup, createProfile}) => {
           onChange={handleChange}
           type="password"
           autoComplete="off"
+          placeholder="Password"
         />
         <br />
-        <br />
-        <input type="submit" value="Sign Up" />
+        <input type="submit" value="Register" />
       </form>
       <Link to={'/login'} className="authLink">
-      <h2> Already registered, sign in instead ? </h2>
+      <h2 className="authText"> Already registered, sign in instead ? </h2>
       </Link>
     </div>
   );

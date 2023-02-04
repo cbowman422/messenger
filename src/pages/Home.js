@@ -11,14 +11,14 @@ signOut()
 }
 
   return (
-    <div className={"homeGrid"}>
+    <div className="homeGrid">
 
     <Header loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} />
     <Rooms currentUser={currentUser} socket={socket} />
     
-    <div className={"homeComponent"}>
-    <h1> Welcome to Millie's Messenger </h1>
-    <h2> The Live Public Chat Room is a place for everyone but the messages only stay as long as youre in there. You can also select a user chat room and send any user a prive message and these messages wont disappear. If you want to send a message to all prive users you can select your username from the header, this can also be used to set an away message. Millie's Messenger uses Greenwich Mean Time (GMT).</h2>
+    <div className="homeComponent">
+    <h1 className="homeHeader"> Welcome to Millie's Messenger </h1>
+    <h2 className="homeBody"> The Live Public Chat Room is a place for everyone but the messages only stay as long as youre in there. You can also select a user chat room and send any user a prive message and these messages wont disappear. If you want to send a message to all prive users you can select your username from the header, this can also be used to set an away message. Millie's Messenger uses Greenwich Mean Time (GMT).</h2>
     </div>
     </div>
   )

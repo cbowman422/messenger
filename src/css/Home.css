@@ -16,3 +16,11 @@
  grid-area: home;
  padding: 3%
 }
+
+.homeHeader{
+font-size: 22px;
+}
+
+.homeBody{
+font-size: 18px;
+}

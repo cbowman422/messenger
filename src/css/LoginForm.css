@@ -9,3 +9,13 @@
 .authLink{
   text-decoration: none;
 }
+
+.authText{
+  color: black;
+}
+
+.authForm{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

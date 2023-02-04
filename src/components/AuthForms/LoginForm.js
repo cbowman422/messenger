@@ -42,8 +42,8 @@ const LoginForm = ({login}) => {
   return (
     <div className="loginContainer">
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Name: </label>
+      <form onSubmit={handleSubmit} className="authForm">
+        <label htmlFor="username"></label>
         <input
           id="username"
           name="username"
@@ -51,10 +51,11 @@ const LoginForm = ({login}) => {
           onChange={handleChange}
           maxLength="17"
           autoComplete="on"
+          placeholder="Username"
         />
         <br />
-        <br />
-        <label htmlFor="password">Password: </label>
+        
+        <label htmlFor="password"></label>
         <input
           id="password"
           name="password"
@@ -62,13 +63,14 @@ const LoginForm = ({login}) => {
           onChange={handleChange}
           // type="password"
           autoComplete="off"
+          placeholder="Password"
         />
         <br />
-        <br />
+        
         <input type="submit" value="Login" />
       </form>
       <Link to={'/'} className="authLink" >
-      <h2> Need to register? </h2>
+      <h2 className="authText"> Need to register? </h2>
       </Link>
     </div>
   );
