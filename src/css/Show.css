@@ -10,7 +10,7 @@
 }
 
 .showComponent{
-  border: solid orange;
+  border: solid var(--cool);
   grid-area: showComp;
   display: flex;
   justify-content: center;

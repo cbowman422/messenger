@@ -1,5 +1,5 @@
 .roomsUsersContainer{
-  border: solid red;
+  /* border: solid var(--cool); */
   min-width: 120px;
   height:300px;
   line-height:10px;
@@ -7,13 +7,13 @@
 }
 
 .roomComponent{
-  border: solid purple;
+  border: solid var(--cool);
 }
 
 
 .roomLabels{
   padding-left: 3%;
-  border: solid burlywood;
+  /* border: solid burlywood; */
   font-size: 18px;
 }
 
@@ -21,7 +21,7 @@
 .livePublicChat{
   text-decoration: none;
   padding-left: 15%;
-  color: black;
+  color: var(--dark);
 
 }
 
@@ -31,7 +31,7 @@
 }
 
 .roomLabelsUsers{
-  color:black;
+  color: var(--dark);
   font-size: 18px;
   padding-left: 15%;
 }

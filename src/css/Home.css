@@ -12,7 +12,7 @@
 }
 
 .homeComponent{
-  border: solid teal;
+  border: solid var(--cool);
  grid-area: home;
  padding: 3%
 }

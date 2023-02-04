@@ -4,23 +4,36 @@
 
 :root
 {
-  --dark: #0c0d07;
-  --mid: #b43d34;
-  --light: #7da2b9;
-  --grey: #404040;
-  --yellow: #f0ebaf;
-  --light-color: #ab93a8;
-  --green: #00b912;
+  --dark: #0c070d;
+  --cool:  #41424c;
+  --lightbrown: #e0d7bf;
+  --lightgray: #e8e8e8;
+  --darkcool: #2e2e35;
+  --green: #008e0e;
+  --red: #950909;
+  --userTwo: #003eb9;
   --transition: all 0.3s ease-in-out;
 }
 
 
+body{
+  background: rgba(125, 125, 146, 0.692);
+}
+
 .appContainer{
-  border: solid salmon;
+  border: solid var(--darkcool);
   font-family: 'Lato', sans-serif;
   letter-spacing: .6px;
+  background-color: var(--lightgray);
+  border-radius: 10px;
 }
 
 
 
 
+@media all and (min-width: 660px){
+  /*Tablets [601px -> 1200px]*/
+  .appContainer{
+    margin: 20px 10%;
+  }
+}

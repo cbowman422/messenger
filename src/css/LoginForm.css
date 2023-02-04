@@ -1,5 +1,5 @@
 .loginContainer{
-  border: solid red;
+  border: solid var(--cool);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,7 +11,7 @@
 }
 
 .authText{
-  color: black;
+  color: var(--dark);
 }
 
 .authForm{

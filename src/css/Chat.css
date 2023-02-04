@@ -4,7 +4,8 @@
   line-height:10px;
   overflow-y:scroll;
   padding:30px;
-  border: solid green;
+  border: solid var(--cool);
+  background-color: rgb(251, 251, 251);
 }
 
 
@@ -14,7 +15,8 @@
   line-height:10px;
   overflow-y:scroll;
   padding:30px;
-  border: solid yellow;
+  border: solid var(--cool);
+  background-color: rgb(251, 251, 251);
 
 }
 
@@ -33,7 +35,7 @@ textarea{
 }
 
 .chatContainer{
-  border: solid pink;
+  /* border: solid pink; */
   grid-area: chat;
   display: flex;
   justify-content: center;
@@ -43,34 +45,39 @@ textarea{
 
 .publicUsersTextChat{
   line-height: 120%;
+  font-weight: bold;
 }
 
 #publicUserTextSpan{
  color: rgb(142, 121, 0);
+ font-weight: bold;
 }
 
 .currentUserTextChat{
  line-height: 120%;
-
+ font-weight: bold;
 }
 
 .currentUserTextChatLink{
   text-decoration: none;
-  color: black;
+  color: var(--dark);
 }
 
 #currentUserTextSpan{
  color: var(--green);
+ font-weight: bold;
 }
 
 
 .userTwoTextChat{
   line-height: 120%;
+  font-weight: bold;
 }
 
 
 #userTwoTextSpan{
-  color: rgb(0, 85, 255);
+  color:var(--userTwo);
+  font-weight: bold;
 }
 
 
@@ -96,5 +103,5 @@ textarea{
 }
 
 .backLinkText{
-  color:black;
+  color:var(--dark)
 }
