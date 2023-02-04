@@ -51,14 +51,16 @@ if(currentUser===undefined){
       <Link to={'/login'}>
        <button>sign in</button> 
       </Link>
+      <img className="milliesPhoto" src="https://imgur.com/nU0uIrk.jpg" alt="mil" ></img>
       <Link to={'/login'}>
        <button onClick={clearLocalStorage}>signout</button> 
       </Link>
         </div>
         <div className="milliesContainer">
-   <section> {currentUser.username?active():notActive()}</section>
-     <h2 className="milliesMessenger"> Millie's Messenger </h2>
-     <img className="milliesPhoto" src="https://imgur.com/nU0uIrk.jpg" alt="mil"></img>
+        <section> {currentUser.username?active():notActive()}</section>
+       <h1 className="milliesMessenger"> Millie's Messenger </h1>
+       <h1 className="headerSpaceRight"> &nbsp; </h1>
+       {/* <img className="milliesPhoto" src="https://imgur.com/nU0uIrk.jpg" alt="mil" ></img> */}
         </div>
  </div>
 )

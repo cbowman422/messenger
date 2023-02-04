@@ -1,13 +1,19 @@
 .roomsUsersContainer{
-  /* border: solid var(--cool); */
+  /* border: solid var(--cool);  */
   min-width: 120px;
   height:300px;
   line-height:10px;
   overflow-y:scroll;
+
 }
 
 .roomComponent{
-  border: solid var(--cool);
+  border: solid 1px #ffffff;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  margin: 10px;
+  box-shadow: 2px 2px 5px #5a5a5a;
+  padding-bottom: 10px;
 }
 
 

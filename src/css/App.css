@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 
-
 :root
 {
   --dark: #0c070d;
@@ -17,14 +16,13 @@
 
 
 body{
-  background: rgba(125, 125, 146, 0.692);
+  /* background: rgba(125, 125, 146, 0.692); */
+  background: linear-gradient(176deg, rgba(221,220,220,1) 0%, rgba(171,171,171,1) 35%, rgba(147,147,147,1) 100%);
 }
 
 .appContainer{
-  border: solid var(--darkcool);
   font-family: 'Lato', sans-serif;
   letter-spacing: .6px;
-  background-color: var(--lightgray);
   border-radius: 10px;
 }
 

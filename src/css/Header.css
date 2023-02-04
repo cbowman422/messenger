@@ -1,6 +1,6 @@
 .headerContainer{
-border: solid var(--cool);
 grid-area: header;
+/* border: solid blue; */
 }
 
 .userStatus{
@@ -35,7 +35,7 @@ padding-right: 6%;
 .signButtonsDiv{
   display: flex;
   justify-content: space-between;
-  /* border: solid gray; */
+  /* border: solid gray;  */
 
 }
 
@@ -44,7 +44,7 @@ margin: 12px 0 0 8px;
 }
 
 .milliesContainer{
-/* border: solid gold; */
+/* border: solid gold;  */
 display: flex;
 justify-content: space-between;
 }
@@ -54,5 +54,10 @@ justify-content: space-between;
   width:80px;
   border-radius: 100%;
   margin: 2px 15px;
-  border: solid var(--cool);
+  box-shadow: 1px 1px 2px #333333;
 }
+
+.headerSpaceRight{
+  margin: 0 30px;
+}
+

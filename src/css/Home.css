@@ -12,9 +12,13 @@
 }
 
 .homeComponent{
-  border: solid var(--cool);
- grid-area: home;
- padding: 3%
+  border: solid 1px #ffffff;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  box-shadow: 2px 2px 5px #5a5a5a;
+  margin: 10px;
+  grid-area: home;
+  padding: 3%
 }
 
 .homeHeader{
