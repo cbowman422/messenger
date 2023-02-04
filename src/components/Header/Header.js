@@ -49,11 +49,11 @@ if(currentUser===undefined){
     <div className="headerContainer">
     <div className="signButtonsDiv">
       <Link to={'/login'}>
-       <button>Login</button> 
+       <button className="loginBtn">Login</button> 
       </Link>
       <img className="milliesPhoto" src="https://imgur.com/nU0uIrk.jpg" alt="mil" ></img>
       <Link to={'/login'}>
-       <button onClick={clearLocalStorage}>Logout</button> 
+       <button onClick={clearLocalStorage} className="logoutBtn">Logout</button> 
       </Link>
         </div>
         <div className="milliesContainer">
