@@ -139,7 +139,7 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
               // update local state with response (json from be)
               setChat([...chat, createdChat])
               // reset newForm state so that our form empties out
-              // TODO IDIOT this is breaking my shit -----------------------------------------------
+          
               setNewForm({
                   textChat: "",
                   chatRoomUserTwo: `${id}`,
@@ -230,7 +230,7 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
     if (id === currentUser.username){
       return (
         <div>
-          <h1> Set Away Message that will appear to each user in your Private Chats : </h1>
+          <h1> This is your own channel where you can set an Away Message that will appear to each user, privately. </h1>
           <form onSubmit={handleSubmit}>
           <label>
           <textarea 

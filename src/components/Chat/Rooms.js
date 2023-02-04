@@ -152,7 +152,7 @@ const Rooms = ({currentUser, socket}) => {
       <Link to={'/room/LivePublicChatRoom'}>
       <p>Live Public Chat Room!</p>
       </Link>
-      <h2> Private Chat Rooms : </h2>
+      <h2> User Chat Rooms : </h2>
       <div className="roomsUsersContainer">
 
   {room?.map((roomMap) =>

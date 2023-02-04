@@ -49,7 +49,7 @@ textarea{
 }
 
 #currentUserTextSpan{
- color: rgb(0, 138, 62);
+ color: var(--green);
 }
 
 

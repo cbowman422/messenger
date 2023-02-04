@@ -8,3 +8,15 @@ grid-area: header;
 
 padding-right: 6%;
 }
+
+.offline {
+  color: rgb(167, 9, 9);
+  font-size: 20px;
+  
+}
+
+.loggedInUserTag{
+  color: var(--green);
+  text-decoration: none;
+  font-size: 26px;
+}

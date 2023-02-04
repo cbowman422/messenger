@@ -13,8 +13,8 @@ const Header = ({signOut, currentUser}) => {
 const active = () => {
   
     return (
-      <Link to={`/room/${currentUser.username}`}>
-      <p className="userStatus">{currentUser.username}</p>
+      <Link to={`/room/${currentUser.username}`} className="loggedInUserTag">
+      <p >{currentUser.username}</p>
       </Link>
     )
   
@@ -23,11 +23,13 @@ const active = () => {
 const notActive = () => {
 
     return (
-      <p> Offline </p>
+      <p className="offline" > Offline </p>
     )
   
 }
 
+
+// I think this next first if bit may be dead code but dont mess with it yet...
 if(currentUser===undefined){
   return (
        <div className="headerContainer">
@@ -37,7 +39,7 @@ if(currentUser===undefined){
       <Link to={'/login'}>
        <button onClick={clearLocalStorage}>signout</button> 
       </Link>
-      <p> Offline </p>
+      <p className="offline" > Offline </p> 
     </div>
   )
 } else {
