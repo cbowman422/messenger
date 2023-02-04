@@ -115,7 +115,7 @@ const Show= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
                 type="text"
                 value={editForm.textChat}
                 rows = "5" 
-                cols = "60"
+                cols = "36"
                 name="textChat"
                 placeholder="textChat"
                 onChange={handleChange}
