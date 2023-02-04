@@ -58,6 +58,7 @@ if(currentUser===undefined){
         <div className="milliesContainer">
    <section> {currentUser.username?active():notActive()}</section>
      <h2 className="milliesMessenger"> Millie's Messenger </h2>
+     <img className="milliesPhoto" src="https://imgur.com/nU0uIrk.jpg" alt="mil"></img>
         </div>
  </div>
 )

@@ -85,3 +85,16 @@ textarea{
 
   margin-top: 0;
 }
+
+
+.textForm{
+  margin: 20px auto;
+}
+
+.backLink{
+  text-decoration: none;
+}
+
+.backLinkText{
+  color:black;
+}

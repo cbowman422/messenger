@@ -19,3 +19,8 @@
   justify-content: center;
   flex-direction: column;
 }
+
+.milliesAuth{
+  margin: 100px 10px 0 10px;
+  font-size: 40px;
+}

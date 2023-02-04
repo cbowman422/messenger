@@ -41,6 +41,7 @@ const LoginForm = ({login}) => {
 // Login Form JSX and export
   return (
     <div className="loginContainer">
+      <h1 className="milliesAuth">Millie's Messenger</h1>
       <h1>Login</h1>
       <form onSubmit={handleSubmit} className="authForm">
         <label htmlFor="username"></label>
@@ -61,7 +62,7 @@ const LoginForm = ({login}) => {
           name="password"
           value={input.password}
           onChange={handleChange}
-          // type="password"
+          //type="password"
           autoComplete="off"
           placeholder="Password"
         />
@@ -70,7 +71,7 @@ const LoginForm = ({login}) => {
         <input type="submit" value="Login" />
       </form>
       <Link to={'/'} className="authLink" >
-      <h2 className="authText"> Need to register? </h2>
+      <h2 className="authText"> Need to register ? </h2>
       </Link>
     </div>
   );

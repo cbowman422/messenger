@@ -235,7 +235,7 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
       return (
         <div>
           <h1> This is your own channel where you can set an Away Message that will appear to each user, privately. </h1>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="textForm">
           <label>
           <textarea 
             type='text' 
@@ -256,7 +256,7 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
       return (
         <div>
           <h2>Connected with {id}</h2>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="textForm">
           <label>
           <textarea 
             type='text' 
@@ -293,8 +293,8 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
 
     <div className={"chatContainer"}>
         <section>
-        <Link to={`/rooms`}>
-          <h1> &#60; </h1>
+        <Link to={`/rooms`} className="backLink">
+          <h1 className="backLinkText"> &#60; </h1>
         </Link>
        <section className="chat-list">{chat && chat.length ? loaded() : loading()}</section>
         <section className="awayMessage">{currentUser ? submissionField() : <> </>}</section>
