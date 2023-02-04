@@ -14,7 +14,7 @@ const active = () => {
   
     return (
       <Link to={`/room/${currentUser.username}`} className="loggedInUserTagLink">
-      <p className="loggedInUserTag" >{currentUser.username} Active</p> 
+      <p className="loggedInUserTag" >{currentUser.username}'s Active</p> 
       </Link>
     )
   
