@@ -41,6 +41,14 @@ textarea{
 }
 
 
+.publicUsersTextChat{
+  line-height: 120%;
+}
+
+#publicUserTextSpan{
+ color: rgb(142, 121, 0);
+}
+
 .currentUserTextChat{
  line-height: 120%;
 

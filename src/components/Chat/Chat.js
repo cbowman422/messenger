@@ -183,8 +183,8 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
           { if(messagesMap.chatRoomUserTwo === 'LivePublicChatRoom'){
           }
             return(
-              <div key={messageMapIdx} className='chat-card'>
-                <p>{messagesMap.username} : {messagesMap.text}</p>
+              <div key={messageMapIdx} className='publicUsersTextChat'>
+                <p><span id={"publicUserTextSpan"}>{messagesMap.username} :</span> {messagesMap.text}</p>
                 </div>
             );
           })
