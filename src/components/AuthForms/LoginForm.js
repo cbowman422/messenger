@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState} from 'react'
-import  {useNavigate} from 'react-router-dom'
+import  {useNavigate, Link} from 'react-router-dom'
 import '../../css/LoginForm.css'
 
 const LoginForm = ({login}) => {
@@ -59,11 +59,15 @@ const LoginForm = ({login}) => {
           name="password"
           value={input.password}
           onChange={handleChange}
+          type="password"
         />
         <br />
         <br />
         <input type="submit" value="login" />
       </form>
+      <Link to={'/'} >
+      <h2> Need to Register? </h2>
+      </Link>
     </div>
   );
 };

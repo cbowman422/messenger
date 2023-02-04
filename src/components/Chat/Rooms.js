@@ -147,12 +147,12 @@ const Rooms = ({currentUser, socket}) => {
 
 
   return (
-      <div className={"roomComponent"}>
-      <h2> Public Chat : </h2>
-      <Link to={'/room/LivePublicChatRoom'}>
-      <p>Live Public Chat Room!</p>
+      <div className="roomComponent">
+      <h2 className="roomLabels"> Public Chat : </h2>
+      <Link to={'/room/LivePublicChatRoom'} className="livePublicChatLink">
+      <p className="livePublicChat" >Live Public Chat Room!</p>
       </Link>
-      <h2> User Chat Rooms : </h2>
+      <h2 className="roomLabels"> User Chat Rooms : </h2>
       <div className="roomsUsersContainer">
 
   {room?.map((roomMap) =>
@@ -161,8 +161,8 @@ const Rooms = ({currentUser, socket}) => {
 
     return(
       <div key={roomMap._id} >
-        <Link to={`/room/${roomMap.usernameProfile}`} onClick={scrollToList}>
-        <p>{roomMap.usernameProfile}</p>
+        <Link to={`/room/${roomMap.usernameProfile}`} onClick={scrollToList} className="livePublicChatLink">
+        <p className="roomLabelsUsers">{roomMap.usernameProfile}</p>
         </Link>
       </div>
     )

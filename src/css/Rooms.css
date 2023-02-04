@@ -4,10 +4,33 @@
   height:300px;
   line-height:10px;
   overflow-y:scroll;
-  padding:30px;
 }
 
 .roomComponent{
   border: solid purple;
  
+}
+
+
+.roomLabels{
+  padding-left: 3%;
+}
+
+
+.livePublicChat{
+  text-decoration: none;
+  padding-left: 3%;
+  color: black;
+
+}
+
+
+.livePublicChatLink{
+  text-decoration: none;
+}
+
+.roomLabelsUsers{
+  color:black;
+  font-size: 17px;
+  padding-left: 15%;
 }
