@@ -104,17 +104,10 @@ const Show= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
   {
    
       return(
-        <>
-        <section>
+        <div>
         <Link to={`/room/${chat.chatRoomUserTwo}`}>
         <h1> &#60; </h1>
         </Link>
-          <div className="chat">
-            {/* <h2>{chat.textChat}</h2> */}
-            <div>
-            </div>
-          </div>
-        </section>
         <section>
           <h2>Edit message  :</h2>
           <form onSubmit={updateChat}>
@@ -127,13 +120,17 @@ const Show= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
                 placeholder="textChat"
                 onChange={handleChange}
             />
+            <div>
+
             <input type="submit" value="Update Message" />
+            </div>
           </form> 
           <button className="delete" onClick={removeChat}>
                 Delete Message
           </button>
+          
         </section>
-        </>
+        </div>
       )
     
   }

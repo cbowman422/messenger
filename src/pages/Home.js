@@ -17,7 +17,7 @@ signOut()
     <Rooms currentUser={currentUser} socket={socket} />
     
     <div className={"homeComponent"}>
-    <h1> Welcome to name </h1>
+    <h1> Welcome to Millie's Messenger </h1>
     <h2> Chat with your friends set an away status or hang</h2>
     </div>
     </div>

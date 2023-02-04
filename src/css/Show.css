@@ -6,11 +6,13 @@
   grid-template-rows: .1fr 1fr;
   grid-template-areas: 
     "header header"
-    "rooms showComp" ;
+    "showComp showComp" ;
 }
 
 .showComponent{
   border: solid orange;
   grid-area: showComp;
+  display: flex;
+  justify-content: center;
   }
   

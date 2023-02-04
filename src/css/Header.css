@@ -1,7 +1,6 @@
 .headerContainer{
 border: solid blue;
 grid-area: header;
-
 }
 
 .userStatus{
@@ -12,11 +11,34 @@ padding-right: 6%;
 .offline {
   color: rgb(167, 9, 9);
   font-size: 20px;
+  padding-left: 3%;
   
+}
+
+.loggedInUserTagLink{
+
+  text-decoration: none;
+
 }
 
 .loggedInUserTag{
   color: var(--green);
-  text-decoration: none;
   font-size: 26px;
+  padding-left: 3%;
+}
+
+.signButtonsDiv{
+  display: flex;
+  justify-content: space-between;
+  border: solid gray;
+}
+
+.milliesMessenger{
+
+}
+
+.milliesContainer{
+border: solid gold;
+display: flex;
+justify-content: space-between;
 }

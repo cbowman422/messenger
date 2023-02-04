@@ -1,6 +1,5 @@
 .roomsUsersContainer{
   border: solid red;
-  width:160px;
   height:300px;
   line-height:10px;
   overflow-y:scroll;
@@ -8,12 +7,12 @@
 
 .roomComponent{
   border: solid purple;
- 
 }
 
 
 .roomLabels{
   padding-left: 3%;
+  border: solid burlywood;
 }
 
 

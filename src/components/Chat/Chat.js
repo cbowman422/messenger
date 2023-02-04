@@ -264,7 +264,9 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
             onChange={handleChange}> 
           </textarea>
           </label>
+          <div>
           <input type="submit" value="Send" />
+          </div>
         </form>
         </div>
       )

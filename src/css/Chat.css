@@ -29,12 +29,15 @@ textarea{
   grid-template-rows: .1fr 1fr;
   grid-template-areas: 
     "header header"
-    "rooms chat" ;
+    "chat chat" ;
 }
 
 .chatContainer{
   border: solid pink;
   grid-area: chat;
+  display: flex;
+  justify-content: center;
+  
 }
 
 
