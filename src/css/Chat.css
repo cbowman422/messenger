@@ -72,3 +72,16 @@ textarea{
 #userTwoTextSpan{
   color: rgb(0, 85, 255);
 }
+
+
+.textDate{
+  font-size: 12px;
+  margin-top: 0;
+  margin-left: 1%;
+  
+}
+
+.textMargin{
+
+  margin-bottom: 0;
+}

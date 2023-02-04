@@ -50,6 +50,7 @@ const LoginForm = ({login}) => {
           value={input.username}
           onChange={handleChange}
           maxLength="17"
+          autoComplete="on"
         />
         <br />
         <br />
@@ -60,13 +61,14 @@ const LoginForm = ({login}) => {
           value={input.password}
           onChange={handleChange}
           // type="password"
+          autoComplete="off"
         />
         <br />
         <br />
-        <input type="submit" value="login" />
+        <input type="submit" value="Login" />
       </form>
-      <Link to={'/'} >
-      <h2> Need to Register? </h2>
+      <Link to={'/'} className="authLink" >
+      <h2> Need to register? </h2>
       </Link>
     </div>
   );

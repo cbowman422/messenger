@@ -50,7 +50,7 @@ const RegisterForm = ({signup, createProfile}) => {
   // Register Form JSX and export
   return (
     <div className="registerContainer">
-      <h1>Register a Username.</h1>
+      <h1>Register a username</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Name: </label>
         <input
@@ -59,6 +59,7 @@ const RegisterForm = ({signup, createProfile}) => {
           value={input.username}
           onChange={handleChange}
           maxLength="17"
+          autoComplete="on"
         />
         <br />
         <br />
@@ -69,13 +70,14 @@ const RegisterForm = ({signup, createProfile}) => {
           value={input.password}
           onChange={handleChange}
           type="password"
+          autoComplete="off"
         />
         <br />
         <br />
         <input type="submit" value="Sign Up" />
       </form>
-      <Link to={'/login'} >
-      <h2> Already Registered, Sign in Instead ? </h2>
+      <Link to={'/login'} className="authLink">
+      <h2> Already registered, sign in instead ? </h2>
       </Link>
     </div>
   );

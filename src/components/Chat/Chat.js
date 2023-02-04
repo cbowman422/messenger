@@ -39,10 +39,10 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
     if (messagesLibrary.chatRoomUserTwo === "" && id !== "LivePublicChatRoom"){
   
       setTimeout(function(){
-        
         let element =	document.getElementById('scrollWindow')
         element.scrollTop = element.scrollHeight;
      }, 400);
+
     }
     if (id === "LivePublicChatRoom" && messages.length > 4){
       let element =	document.getElementById('scrollWindowLivePublicChatRoom')
@@ -58,8 +58,11 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
       let element =	document.getElementById('scrollWindowLivePublicChatRoom')
       element.scrollTop = element.scrollHeight;
     } else if (id !== "LivePublicChatRoom") {
-      let element =	document.getElementById('scrollWindow')
-      element.scrollTop = element.scrollHeight;
+      setTimeout(function(){
+        
+        let element =	document.getElementById('scrollWindow')
+        element.scrollTop = element.scrollHeight;
+     }, 400);
     } 
  
 	}
@@ -204,15 +207,16 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
           return( 
             <div key={chatMap._id} className={"currentUserTextChat"}>
                 <Link to={`/chat/${chatMap._id}`} className={"currentUserTextChatLink"}>
-                <p><span id={"currentUserTextSpan"}>{chatMap.owner.username}</span>  : {chatMap.textChat}</p>
+                <p className="textMargin"><span id={"currentUserTextSpan"}>{chatMap.owner.username}</span>  : {chatMap.textChat}</p>
                 </Link>
-              
+                <p className="textDate">{chatMap.createdAt[5]}{chatMap.createdAt[6]}/{chatMap.createdAt[8]}{chatMap.createdAt[9]}/{chatMap.createdAt[2]}{chatMap.createdAt[3]} , {chatMap.createdAt[11]}{chatMap.createdAt[12]}{chatMap.createdAt[13]}{chatMap.createdAt[14]}{chatMap.createdAt[15]}</p>
             </div>
           )
         } if ((chatMap.chatRoomUserTwo === id || chatMap.chatRoomUserTwo ===  currentUser.username) && (chatMap.owner.username === id || chatMap.owner.username === currentUser.username)) { return( 
 
           <div key={chatMap._id} className={"userTwoTextChat"}>
-              <p><span id={"userTwoTextSpan"}>{chatMap.owner.username}</span> : {chatMap.textChat}</p>
+              <p className="textMargin"><span id={"userTwoTextSpan"}>{chatMap.owner.username}</span> : {chatMap.textChat}</p>
+              <p className="textDate">{chatMap.createdAt[5]}{chatMap.createdAt[6]}/{chatMap.createdAt[8]}{chatMap.createdAt[9]}/{chatMap.createdAt[2]}{chatMap.createdAt[3]} , {chatMap.createdAt[11]}{(chatMap.createdAt[12])}{chatMap.createdAt[13]}{chatMap.createdAt[14]}{chatMap.createdAt[15]}</p>
           </div>
         )
 
