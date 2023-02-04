@@ -51,6 +51,7 @@ const LoginForm = ({login}) => {
           value={input.username}
           onChange={handleChange}
           maxLength="17"
+          minLength="3"
           autoComplete="on"
           placeholder="Username"
         />

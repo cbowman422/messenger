@@ -286,15 +286,15 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
 
   // conditional return to return loading and loaded JSX depending on 
   return (
-    <div className={"chatGrid"}>
+    <div className="chatGrid">
 
     <Header loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} />
     {/* <Rooms currentUser={currentUser} socket={socket} /> */}
 
-    <div className={"chatContainer"}>
-        <section>
+    <div className="chatContainer">
+        <section className="chatContainerSection">
         <Link to={`/rooms`} className="backLink">
-          <h1 className="backLinkText"> &#60; </h1>
+          <h1 className="backLinkText"> &#60; Return </h1>
         </Link>
        <section className="chat-list">{chat && chat.length ? loaded() : loading()}</section>
         <section className="awayMessage">{currentUser ? submissionField() : <> </>}</section>

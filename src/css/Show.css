@@ -10,13 +10,33 @@
 }
 
 .showComponent{
-  border: solid var(--cool);
+
   grid-area: showComp;
   display: flex;
   justify-content: center;
+  /* border: solid red; */
   }
-  
 
+.showContainerSection{
+  border: solid 1px #ffffff;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  margin: 10px;
+  padding: 0 20px;
+  box-shadow: 2px 2px 5px #5a5a5a;
+  
+}
+  
   .delete{
     margin: 0 0 0 79px;
+  }
+
+  .backLinkShow{
+    text-decoration: none;
+  }
+
+  .backLinkTextShow{
+    color:var(--dark);
+    font-size: 20px;
+    margin-bottom: 0;
   }

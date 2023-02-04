@@ -105,10 +105,10 @@ const Show= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
    
       return(
         <div>
-        <Link to={`/room/${chat.chatRoomUserTwo}`} className="backLink">
-        <h1 className="backLinkText"> &#60; </h1>
+        <section className="showContainerSection">
+        <Link to={`/room/${chat.chatRoomUserTwo}`} className="backLinkShow">
+        <h1 className="backLinkTextShow"> &#60; Return</h1>
         </Link>
-        <section>
           <h2>Edit message  :</h2>
           <form onSubmit={updateChat} className="textForm">
             <textarea

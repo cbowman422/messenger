@@ -14,7 +14,7 @@ const active = () => {
   
     return (
       <Link to={`/room/${currentUser.username}`} className="loggedInUserTagLink">
-      <p className="loggedInUserTag" >{currentUser.username}'s Active</p> 
+      <p className="loggedInUserTag" >🟢 {currentUser.username}'s Active</p> 
       </Link>
     )
   
@@ -23,7 +23,7 @@ const active = () => {
 const notActive = () => {
 
     return (
-      <p className="offline" > Offline </p>
+      <p className="offline" >🔴 Offline </p>
     )
   
 }
@@ -41,7 +41,7 @@ if(currentUser===undefined){
        <button onClick={clearLocalStorage}>signout</button> 
       </Link>
         </div>
-      <p className="offline"> Offline </p> 
+      <p className="offline">🔴 Offline </p> 
     </div>
   )
 } else {
@@ -49,18 +49,17 @@ if(currentUser===undefined){
     <div className="headerContainer">
     <div className="signButtonsDiv">
       <Link to={'/login'}>
-       <button>sign in</button> 
+       <button>Login</button> 
       </Link>
       <img className="milliesPhoto" src="https://imgur.com/nU0uIrk.jpg" alt="mil" ></img>
       <Link to={'/login'}>
-       <button onClick={clearLocalStorage}>signout</button> 
+       <button onClick={clearLocalStorage}>Logout</button> 
       </Link>
         </div>
         <div className="milliesContainer">
         <section> {currentUser.username?active():notActive()}</section>
        <h1 className="milliesMessenger"> Millie's Messenger </h1>
        <h1 className="headerSpaceRight"> &nbsp; </h1>
-       {/* <img className="milliesPhoto" src="https://imgur.com/nU0uIrk.jpg" alt="mil" ></img> */}
         </div>
  </div>
 )

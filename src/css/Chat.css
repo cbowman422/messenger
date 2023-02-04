@@ -42,6 +42,15 @@ textarea{
   
 }
 
+.chatContainerSection{
+  border: solid 1px #ffffff;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  margin: 10px;
+  box-shadow: 2px 2px 5px #5a5a5a;
+  padding-bottom: 10px;
+  padding: 0 3%;
+}
 
 .publicUsersTextChat{
   line-height: 120%;
@@ -103,5 +112,6 @@ textarea{
 }
 
 .backLinkText{
-  color:var(--dark)
+  color:var(--dark);
+  font-size: 20px;
 }
