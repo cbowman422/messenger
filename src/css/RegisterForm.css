@@ -1,5 +1,4 @@
 .registerContainer{
-  border: solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
