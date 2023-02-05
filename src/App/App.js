@@ -135,3 +135,4 @@ return (
 export default App;
 
 
+//Access to XMLHttpRequest at 'https://capstone-chat.herokuapp.com/socket.io/?EIO=4&transport=polling&t=OOV9Ns8' from origin 'https://milliesmessenger.netlify.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.

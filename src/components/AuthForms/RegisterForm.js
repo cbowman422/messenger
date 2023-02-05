@@ -71,7 +71,7 @@ const RegisterForm = ({signup, createProfile}) => {
           name="password"
           value={input.password}
           onChange={handleChange}
-          type="password"
+         // type="password"
           autoComplete="off"
           placeholder="Password"
         />
