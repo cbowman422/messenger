@@ -60,19 +60,19 @@ First time users should register a user name. The user will be logged in and a r
 
 ## Screen Shots
 
-![MilliesMessenger](https://imgur.com/4Aln9aO.jpg | width=200)
+![MilliesMessenger](https://imgur.com/4Aln9aO.jpg)
 
-![MilliesMessenger](https://imgur.com/sJvm2cN.jpg | width=200)
+![MilliesMessenger](https://imgur.com/sJvm2cN.jpg)
 
-![MilliesMessenger](https://imgur.com/JBFwE3t.jpg | width=200)
+![MilliesMessenger](https://imgur.com/JBFwE3t.jpg)
 
 ## Mobile Screen Shots
 
-![MilliesMessenger](https://imgur.com/QDgfXWS.jpg | width=100)
+![MilliesMessenger](https://imgur.com/QDgfXWS.jpg)
 
-![MilliesMessenger](https://imgur.com/FpGoVhA.jpg | width=100)
+![MilliesMessenger](https://imgur.com/FpGoVhA.jpg)
 
-![MilliesMessenger](https://imgur.com/qYJXVrK.jpg | width=100)
+![MilliesMessenger](https://imgur.com/qYJXVrK.jpg)
 
 ## Stretch Goals
 
