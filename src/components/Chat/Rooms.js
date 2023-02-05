@@ -145,7 +145,6 @@ const Rooms = ({currentUser, socket}) => {
 
 
 
-
   return (
       <div className="roomComponent">
       <h2 className="roomLabels"> Public Chat : </h2>

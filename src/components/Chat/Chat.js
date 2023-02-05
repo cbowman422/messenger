@@ -3,17 +3,14 @@ import {useState, useEffect} from 'react'
 import { Link, useParams } from "react-router-dom";
 import { getUserToken } from '../../utils/authToken';
 import '../../css/Chat.css'
-
 import Header from '../Header/Header';
-import Rooms from './Rooms';
+
 
 const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=> 
 {
 
-  
   const { id } = useParams()
   
-
   // defining state for Chat and for a new chat form input
   const [chat, setChat] = useState([]);
   const [newForm, setNewForm] = useState({
@@ -32,17 +29,14 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
 	function scrollToList()
 	{
     if (messagesLibrary.chatRoomUserTwo === currentUser.username){
-   
       let element =	document.getElementById('scrollWindow')
       element.scrollTop = element.scrollHeight;
     } 
     if (messagesLibrary.chatRoomUserTwo === "" && id !== "LivePublicChatRoom"){
-  
       setTimeout(function(){
         let element =	document.getElementById('scrollWindow')
         element.scrollTop = element.scrollHeight;
-     }, 400);
-
+      }, 400);
     }
     if (id === "LivePublicChatRoom" && messages.length > 4){
       let element =	document.getElementById('scrollWindowLivePublicChatRoom')
@@ -50,9 +44,9 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
     }
 	}
 
+
   function scrollToListOnClick()
 	{
-
     if (id === "LivePublicChatRoom"){
    
       let element =	document.getElementById('scrollWindowLivePublicChatRoom')
@@ -68,7 +62,6 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
 	}
 
  
-
   // useEffect to store Chat JSON as setChat state
   const getChat= async()=>
   {
@@ -78,7 +71,6 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
       const res= await fetch(BASE_URL)
       const allChat= await res.json()
       setChat(allChat)
-      // TODO this scroll
       scrollToList()
     }catch(err)
     {
@@ -100,10 +92,8 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
   // 0. prevent default (event object method)
    e.preventDefault()
 
-   // TODO this scroll on click stuff
    scrollToListOnClick()
 
-   
   // setting currentState variable as newForm state input after submit
     const currentState = {...newForm}
 
@@ -112,7 +102,6 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
     { 
         currentState ? socket.emit('message', {
           text: currentState.textChat,
-          // TODO add username to sockets here
           username: `${currentUser.username}`,
           id: `${socket.id}${Math.random()}`,
           socketID: socket.id,
@@ -138,11 +127,9 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
               // 4. check our response - 
               // 5. parse the data from the response into JS (from JSON) 
               const createdChat = await response.json()
-
               // update local state with response (json from be)
               setChat([...chat, createdChat])
               // reset newForm state so that our form empties out
-          
               setNewForm({
                   textChat: "",
                   chatRoomUserTwo: `${id}`,
@@ -173,7 +160,6 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
     </section>
   );
 
-
   // Loaded chat function
   const loaded = () =>
   { 
@@ -199,35 +185,35 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
     } else 
     {
 
-      // JSX for creating a new Chat when Chat is loaded
-      return (
-        <div id="scrollWindow">
-        {chat?.map((chatMap) => { if ((chatMap.chatRoomUserTwo === id || chatMap.chatRoomUserTwo ===  currentUser.username) && (chatMap.owner.username === id || chatMap.owner.username === currentUser.username) && (chatMap.owner.username === currentUser.username)){
+    // JSX for creating a new Chat when Chat is loaded
+    return (
+      <div id="scrollWindow">
+      {chat?.map((chatMap) => { if ((chatMap.chatRoomUserTwo === id || chatMap.chatRoomUserTwo ===  currentUser.username) && (chatMap.owner.username === id || chatMap.owner.username === currentUser.username) && (chatMap.owner.username === currentUser.username)){
 
-          return( 
-            <div key={chatMap._id} className="currentUserTextChat">
-                <p className="textDate">{chatMap.createdAt[5]}{chatMap.createdAt[6]}/{chatMap.createdAt[8]}{chatMap.createdAt[9]}/{chatMap.createdAt[2]}{chatMap.createdAt[3]} , {chatMap.createdAt[11]}{chatMap.createdAt[12]}{chatMap.createdAt[13]}{chatMap.createdAt[14]}{chatMap.createdAt[15]}</p>
-                <Link to={`/chat/${chatMap._id}`} className="currentUserTextChatLink">
-                <p className="textMargin"><span id="currentUserTextSpan">{chatMap.owner.username}</span>  : {chatMap.textChat}</p>
-                </Link>
-            </div>
-          )
-        } if ((chatMap.chatRoomUserTwo === id || chatMap.chatRoomUserTwo ===  currentUser.username) && (chatMap.owner.username === id || chatMap.owner.username === currentUser.username)) { return( 
-
-          <div key={chatMap._id} className="userTwoTextChat">
-              <p className="textDate">{chatMap.createdAt[5]}{chatMap.createdAt[6]}/{chatMap.createdAt[8]}{chatMap.createdAt[9]}/{chatMap.createdAt[2]}{chatMap.createdAt[3]} , {chatMap.createdAt[11]}{(chatMap.createdAt[12])}{chatMap.createdAt[13]}{chatMap.createdAt[14]}{chatMap.createdAt[15]}</p>
-              <p className="textMargin"><span id="userTwoTextSpan">{chatMap.owner.username}</span> : {chatMap.textChat}</p>
+        return( 
+          <div key={chatMap._id} className="currentUserTextChat">
+              <p className="textDate">{chatMap.createdAt[5]}{chatMap.createdAt[6]}/{chatMap.createdAt[8]}{chatMap.createdAt[9]}/{chatMap.createdAt[2]}{chatMap.createdAt[3]} , {chatMap.createdAt[11]}{chatMap.createdAt[12]}{chatMap.createdAt[13]}{chatMap.createdAt[14]}{chatMap.createdAt[15]}</p>
+              <Link to={`/chat/${chatMap._id}`} className="currentUserTextChatLink">
+              <p className="textMargin"><span id="currentUserTextSpan">{chatMap.owner.username}</span>  : {chatMap.textChat}</p>
+              </Link>
           </div>
         )
+      } if ((chatMap.chatRoomUserTwo === id || chatMap.chatRoomUserTwo ===  currentUser.username) && (chatMap.owner.username === id || chatMap.owner.username === currentUser.username)) { return( 
+
+        <div key={chatMap._id} className="userTwoTextChat">
+            <p className="textDate">{chatMap.createdAt[5]}{chatMap.createdAt[6]}/{chatMap.createdAt[8]}{chatMap.createdAt[9]}/{chatMap.createdAt[2]}{chatMap.createdAt[3]} , {chatMap.createdAt[11]}{(chatMap.createdAt[12])}{chatMap.createdAt[13]}{chatMap.createdAt[14]}{chatMap.createdAt[15]}</p>
+            <p className="textMargin"><span id="userTwoTextSpan">{chatMap.owner.username}</span> : {chatMap.textChat}</p>
+        </div>
+          )
+
+          }
+          })} 
+          </div>
+          )
 
         }
-        })} 
-        </div>
-      )
 
-    }
-
-  };
+      };
   
 
   const submissionField = () => {
@@ -280,19 +266,15 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
   }
 
 
-  function signOutHandler(){
-    signOut()
-    }
-
+function signOutHandler(){
+  signOut()
+  }
 
 
   // conditional return to return loading and loaded JSX depending on 
   return (
     <div className="chatGrid">
-
     <Header loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} />
-    {/* <Rooms currentUser={currentUser} socket={socket} /> */}
-
     <div className="chatContainer">
         <section className="chatContainerSection">
         <Link to={`/rooms`} className="backLink">

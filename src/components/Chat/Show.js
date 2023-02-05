@@ -3,9 +3,7 @@ import { useState, useEffect } from "react"
 import { useParams, useNavigate, Link } from "react-router-dom"
 import { getUserToken } from '../../utils/authToken'
 import '../../css/Show.css'
-
 import Header from '../Header/Header'
-import Rooms from './Rooms'
 
 
 const Show= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>

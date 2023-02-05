@@ -3,9 +3,8 @@ import React from 'react'
 import {useState} from 'react'
 import {getUserToken, setUserToken, clearUserToken} from '../utils/authToken'
 import Main from '../pages/Main';
-import Header from '../components/Header/Header';
 import '../css/App.css'
-import Rooms from '../components/Chat/Rooms';
+
 
 
 // Connecting Socket.io server to React App
@@ -17,10 +16,7 @@ function App() {
   // import start for the current user object and for isAuthenticated
   const [currentUser, setCurrentUser] = useState({})
   const [isAuthenticated, setIsAuthenticated] = useState(false)
-
   const [currentProfile, setCurrentProfile] = useState({})
-
-
 
 
   const registerProfile = async(data) =>{
@@ -131,10 +127,6 @@ function App() {
 
 return (
   <div className={"appContainer"}>
-
-    {/* < Header loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} />
-     <Rooms currentUser={currentUser} socket={socket} /> */}
-
     < Main login={loginUser} currentUser={currentUser} signup={registerUser} socket={socket} createProfile={registerProfile} loggedIn={isAuthenticated} signOut={signOutHandler}/>
   </div>
 );
