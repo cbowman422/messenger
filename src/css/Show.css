@@ -65,6 +65,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  box-shadow: 2px 2px 5px #5a5a5a;
 }
 
 .updateBtn
@@ -89,6 +90,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  box-shadow: 2px 2px 5px #5a5a5a;
 }
 
 .deleteBtn:hover {
