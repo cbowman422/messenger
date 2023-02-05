@@ -18,13 +18,21 @@
   box-shadow: 2px 2px 5px #5a5a5a;
   margin: 10px;
   grid-area: home;
-  padding: 3%
+  padding: 0 3% 3% 3%;
 }
 
 .homeHeader{
 font-size: 22px;
+padding-left: 1%;
 }
 
 .homeBody{
 font-size: 18px;
+padding: 1%;
+}
+
+.milSign{
+  display: flex;
+  justify-content: end;
+  padding-right: 3%;
 }
