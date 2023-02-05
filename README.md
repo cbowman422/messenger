@@ -1,12 +1,12 @@
 # Millie's Messenger
 
-## Link to Deployed Client
+## Link to Deployed Client:
 https://capstone-chat.netlify.app
 
-## Link to Deployed Server
+## Link to Deployed Server:
 https://capstone-chat.herokuapp.com/profile
 
-## Link to Server Repo
+## Link to Server Repo:
 https://github.com/cbowman422/capstone_chat_be
 
 ## Project Description:
@@ -58,7 +58,7 @@ First time users should register a user name. The user will be logged in and a r
 -Run $ npm start to start your local backend server
 -Run $ npm start to start your local front end client
 
-## Screen Shots
+## Screen Shots:
 
 ![MilliesMessenger](https://imgur.com/4Aln9aO.jpg)
 
@@ -66,7 +66,7 @@ First time users should register a user name. The user will be logged in and a r
 
 ![MilliesMessenger](https://imgur.com/JBFwE3t.jpg)
 
-## Mobile Screen Shots
+## Mobile Screen Shots:
 
 ![MilliesMessenger](https://imgur.com/QDgfXWS.jpg)
 
@@ -74,11 +74,13 @@ First time users should register a user name. The user will be logged in and a r
 
 ![MilliesMessenger](https://imgur.com/qYJXVrK.jpg)
 
-## Stretch Goals
+## Stretch Goals:
 
 - Clean code better after presentations
 - Try to write to Server through socket connections
 - Incorporate into larger projects
+
+## Planning:
 
 ## Scope: 
 
@@ -106,12 +108,12 @@ The scope was to build a live chat room using Socket.io, Express, MongoDB, Mongo
 
 ## Milestones:
 
-1. Read Sockets.IO Documentation and solve tutorial in local sandboxes (Complete)
-2. Set up React client/ Mongo server w/ Mongoose, and JWT Auth. (Complete)
-3. Incorporate Sockets.IO into React.js (Complete)
-4. Incorporate Sockets.IO into backend Node server (Complete)
-5. Incorporate MongoDB Change Streams into backend. (In Progress)
-6. Create Namespaces for Private Chat Rooms. (Incomplete)
+1. Read Sockets.IO Documentation and solve tutorial in local sandboxes.
+2. Set up React client/ Mongo server w/ Mongoose, and JWT Auth. 
+3. Incorporate Sockets.IO into React.js.
+4. Incorporate Sockets.IO into backend Node server.
+5. Incorporate MongoDB Change Streams into backend. 
+6. Create Namespaces for Private Chat Rooms.
 7.  CSS
 
 ## Feasibility Study:
@@ -131,7 +133,7 @@ https://github.com/cbowman422/mern_socket_fe
 4. https://www.mongodb.com/developer/products/mongodb/mongo-socket-chat-example/
 5. https://www.mongodb.com/docs/manual/changeStreams/
 
-### comments
+### Comments:
 
 ```bash
 Express allows you to define routes of your application based on HTTP methods and URLs. http event listener for connecting to port. on the server instance we bind to socket 'connection' event and provide socket as argument 
