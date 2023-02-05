@@ -28,7 +28,11 @@
   text-decoration: none;
   padding-left: 15%;
   color: var(--dark);
+  transition: var(--transition);
+}
 
+.livePublicChat:hover{
+  color: var(--milblue)
 }
 
 
@@ -40,4 +44,10 @@
   color: var(--dark);
   font-size: 18px;
   padding-left: 15%;
+  transition: var(--transition);
+}
+
+
+.roomLabelsUsers:hover{
+  color: var(--milblue)
 }

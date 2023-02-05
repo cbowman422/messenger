@@ -69,7 +69,7 @@ const LoginForm = ({login}) => {
         />
         <br />
         
-        <input type="submit" value="Login" />
+        <input type="submit" value="Login" className="inputBtn"/>
       </form>
       <Link to={'/'} className="authLink" >
       <h2 className="authText"> Need to register ? </h2>

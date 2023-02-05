@@ -76,7 +76,7 @@ const RegisterForm = ({signup, createProfile}) => {
           placeholder="Password"
         />
         <br />
-        <input type="submit" value="Register" />
+        <input type="submit" value="Register" className="inputBtn" />
       </form>
       <Link to={'/login'} className="authLink">
       <h2 className="authText"> Already registered, login instead ? </h2>

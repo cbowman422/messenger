@@ -27,16 +27,80 @@
   
 }
   
-  .delete{
-    margin: 0 0 0 79px;
-  }
+.backLinkShow{
+  text-decoration: none;
+}
 
-  .backLinkShow{
-    text-decoration: none;
-  }
+.backLinkTextShow{
+  color:var(--dark);
+  font-size: 20px;
+  margin-bottom: 0;
+  transition: var(--transition);
+}
 
-  .backLinkTextShow{
-    color:var(--dark);
-    font-size: 20px;
-    margin-bottom: 0;
-  }
+.backLinkTextShow:hover{
+  color: var(--milblue);
+}
+
+
+
+.deleteBtn
+{
+  margin: 0 0 0 79px;
+  padding: 15px 30px;
+  text-align: center;
+  background-size: 200% auto;
+  color: whitesmoke;
+  background-color: var(--red);
+  border-radius: 5px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px rgba(182,148,77,1);
+  border: 2px var(--cool) ridge;
+  cursor: pointer;
+  padding: 2px 4px;
+  filter: brightness(100%);
+  transition: filter .5s;
+  transition: var(--transition);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.updateBtn
+{
+
+  padding: 15px 30px;
+  text-align: center;
+  background-size: 200% auto;
+  color: whitesmoke;
+  background-color: transparent;
+  border-radius: 5px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px rgba(182,148,77,1);
+  background-image: linear-gradient(45deg, rgb(182,148,77,1) 0%, rgb(47, 131, 209)  70%, rgb(202, 182, 114)  100%);
+  border: 2px var(--cool) ridge;
+  cursor: pointer;
+  padding: 2px 4px;
+  filter: brightness(100%);
+  transition: filter .5s;
+  transition: var(--transition);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.deleteBtn:hover {
+  background: rgb(179, 178, 178);
+  /* change the direction of the change here */
+  color: white;
+  text-decoration: none;
+}
+
+.updateBtn:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: white;
+  text-decoration: none;
+}

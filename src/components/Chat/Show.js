@@ -121,8 +121,8 @@ const Show= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
                 onChange={handleChange}
             />
             <div>
-            <input type="submit" value="Update Message" />
-            <button className="delete" onClick={removeChat} >
+            <input type="submit" value="Update Message"  className="updateBtn"/>
+            <button className="deleteBtn" onClick={removeChat} >
                   Delete Message
             </button>
             </div>

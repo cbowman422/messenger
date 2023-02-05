@@ -186,8 +186,8 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
           { if(messagesMap.chatRoomUserTwo === 'LivePublicChatRoom'){
           }
             return(
-              <div key={messageMapIdx} className='publicUsersTextChat'>
-                <p><span id={"publicUserTextSpan"}>{messagesMap.username} :</span> {messagesMap.text}</p>
+              <div key={messageMapIdx} className="publicUsersTextChat">
+                <p><span id="publicUserTextSpan">{messagesMap.username} :</span> {messagesMap.text}</p>
                 </div>
             );
           })
@@ -205,18 +205,18 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
         {chat?.map((chatMap) => { if ((chatMap.chatRoomUserTwo === id || chatMap.chatRoomUserTwo ===  currentUser.username) && (chatMap.owner.username === id || chatMap.owner.username === currentUser.username) && (chatMap.owner.username === currentUser.username)){
 
           return( 
-            <div key={chatMap._id} className={"currentUserTextChat"}>
+            <div key={chatMap._id} className="currentUserTextChat">
                 <p className="textDate">{chatMap.createdAt[5]}{chatMap.createdAt[6]}/{chatMap.createdAt[8]}{chatMap.createdAt[9]}/{chatMap.createdAt[2]}{chatMap.createdAt[3]} , {chatMap.createdAt[11]}{chatMap.createdAt[12]}{chatMap.createdAt[13]}{chatMap.createdAt[14]}{chatMap.createdAt[15]}</p>
-                <Link to={`/chat/${chatMap._id}`} className={"currentUserTextChatLink"}>
-                <p className="textMargin"><span id={"currentUserTextSpan"}>{chatMap.owner.username}</span>  : {chatMap.textChat}</p>
+                <Link to={`/chat/${chatMap._id}`} className="currentUserTextChatLink">
+                <p className="textMargin"><span id="currentUserTextSpan">{chatMap.owner.username}</span>  : {chatMap.textChat}</p>
                 </Link>
             </div>
           )
         } if ((chatMap.chatRoomUserTwo === id || chatMap.chatRoomUserTwo ===  currentUser.username) && (chatMap.owner.username === id || chatMap.owner.username === currentUser.username)) { return( 
 
-          <div key={chatMap._id} className={"userTwoTextChat"}>
+          <div key={chatMap._id} className="userTwoTextChat">
               <p className="textDate">{chatMap.createdAt[5]}{chatMap.createdAt[6]}/{chatMap.createdAt[8]}{chatMap.createdAt[9]}/{chatMap.createdAt[2]}{chatMap.createdAt[3]} , {chatMap.createdAt[11]}{(chatMap.createdAt[12])}{chatMap.createdAt[13]}{chatMap.createdAt[14]}{chatMap.createdAt[15]}</p>
-              <p className="textMargin"><span id={"userTwoTextSpan"}>{chatMap.owner.username}</span> : {chatMap.textChat}</p>
+              <p className="textMargin"><span id="userTwoTextSpan">{chatMap.owner.username}</span> : {chatMap.textChat}</p>
           </div>
         )
 
@@ -234,7 +234,7 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
     if (id === currentUser.username){
       return (
         <div>
-          <h1> This is your own channel where you can set an Away Message that will appear to each user, privately. </h1>
+          <h2 className="awayText"> This is YOUR channel where you can set an Away Message that will appear to each user, privately. </h2>
           <form onSubmit={handleSubmit} className="textForm">
           <label>
           <textarea 
@@ -247,7 +247,9 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
             onChange={handleChange}
           > </textarea>
           </label>
-          <input type="submit" value="Set Away Message" />
+          <div>
+          <input type="submit" value="Set Away Message" className="sendBtn"/>
+          </div>
         </form>
         </div>
       )
@@ -255,7 +257,7 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
     } else {
       return (
         <div>
-          <h2>Connected with {id}</h2>
+          <h2 className="awayText">Connected with {id} ⚡ </h2>
           <form onSubmit={handleSubmit} className="textForm">
           <label>
           <textarea 
@@ -269,7 +271,7 @@ const Chat= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
           </textarea>
           </label>
           <div>
-          <input type="submit" value="Send" />
+          <input type="submit" value="Send" className="sendBtn"/>
           </div>
         </form>
         </div>
