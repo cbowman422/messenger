@@ -77,7 +77,6 @@ First time users should register a user name. The user will be logged in and a r
 ## Stretch Goals
 
 - Clean code better after presentations
-- Hide the password and get thrown breached pw warnings
 - Try to write to Server through socket connections
 - Incorporate into larger projects
 
