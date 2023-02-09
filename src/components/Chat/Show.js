@@ -60,7 +60,6 @@ const Show= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
       
       const response= await fetch(URL, options);
       const updatedChat= await response.json();
-      console.log(updatedChat)
       setChat(updatedChat);
       setEditForm(updatedChat);
       navigate(`/room/${chat.chatRoomUserTwo}`);
@@ -155,7 +154,6 @@ const Show= ({currentUser, socket, isAuthenticated, signOutHandler, signOut})=>
   <div className={"showGrid"}>
 
     <Header loggedIn={isAuthenticated} signOut={signOutHandler} currentUser={currentUser} />
-    {/* <Rooms currentUser={currentUser} socket={socket} /> */}
 
   <section className={"showComponent"}>
     {chat ? loaded() : loading()}

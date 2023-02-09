@@ -79,7 +79,7 @@ const RegisterForm = ({signup, createProfile}) => {
         <input type="submit" value="Register" className="inputBtn" />
       </form>
       <Link to={'/login'} className="authLink">
-      <h2 className="authText"> Already registered, login instead ? </h2>
+      <h2 className="authText"> Already registered ? Log in here .</h2>
       </Link>
     </div>
   );

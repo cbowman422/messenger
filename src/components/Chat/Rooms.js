@@ -19,7 +19,7 @@ const Rooms = ({currentUser, socket}) => {
         const res= await fetch(BASE_URL)
         const allProfile= await res.json()
 
-        // console.log(allProfile)
+
         let oderedRoomListNumber = []
         let len = allProfile.length
         for (let i=0; i < len; i++) {
@@ -102,7 +102,7 @@ const Rooms = ({currentUser, socket}) => {
             oderedRoomListNumber.push(26)
           }
           }
-        // console.log(oderedRoomListNumber)
+
         for (let j=0; j < len; j++) {
           for (let k=0; k < len; k++) {
             if (oderedRoomListNumber[k] > oderedRoomListNumber[k + 1]) {
@@ -115,7 +115,7 @@ const Rooms = ({currentUser, socket}) => {
           }
           }
         }
-        // console.log(oderedRoomListNumber)
+  
         setRoom(allProfile)
       }catch(err)
       {

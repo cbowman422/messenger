@@ -35,10 +35,10 @@ function App() {
       )
 
       const createdProfile = await newProfile.json()
-      console.log(newProfile)
+  
       // put the returned user object in state for CurrentUser
       setCurrentProfile(createdProfile)
-      console.log(currentProfile)
+
       return createdProfile
     } catch (err) {
       console.log(err)
@@ -96,7 +96,6 @@ function App() {
         configs
       )
       const user = await response.json()
-      //console.log(user)
 
   // sets local storage
       setUserToken(user.token)
@@ -106,7 +105,7 @@ function App() {
       setIsAuthenticated(user.isLoggedIn)
 
       window.localStorage.setItem('name', user.user.username);
-      //console.log(user.user)
+     
       return user
     } catch (err) {
       clearUserToken()
@@ -117,7 +116,7 @@ function App() {
 
   const signOutHandler = () => 
   {
-    console.log("hitting")
+  
     if(isAuthenticated){
       setIsAuthenticated(current => !current)
       setCurrentUser({})
@@ -134,5 +133,3 @@ return (
 
 export default App;
 
-
-//Access to XMLHttpRequest at 'https://capstone-chat.herokuapp.com/socket.io/?EIO=4&transport=polling&t=OOV9Ns8' from origin 'https://milliesmessenger.netlify.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
