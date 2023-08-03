@@ -1,4 +1,4 @@
-# Millie's Messenger
+# Messenger
 
 ## Link to Deployed Client:
 https://capstone-chat.netlify.app
